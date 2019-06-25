@@ -1,0 +1,25 @@
+/*! == VARIABLES == */
+
+@font-face {
+    font-family: 'run_wildregular';
+    src: url('inc/fonts/run_wild-webfont.woff') format('woff'),
+         url('inc/fonts/run_wild-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$brand-primary: hsl(0, 0%, 20%);
+$brand-secondary: hsl(9, 75%, 46%);
+$brand-light-grey: hsl(0, 0%, 89%);
+$brand-mid-grey: hsl(0, 0%, 46%);
+$brand-dark-grey: hsl(0, 0%, 46%);
+$brand-white: hsl(0, 0%, 100%);
+$brand-dark: hsl(0, 0%, 20%);
+
+$brand-font: 'run_wildregular', sans-serif;
+$body-font: 'lato', sans-serif;
+$supporting-font: 'linotype-sabon', sans-serif;
+
+$fastEffect: all .5s ease;
+$slowEffect: all 1s ease;
+

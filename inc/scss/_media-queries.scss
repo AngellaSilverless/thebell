@@ -1,0 +1,737 @@
+/*! == MEDIA QUERIES == */
+
+/*===========LARGE (1200px)==========*/
+
+@media only screen and (max-width: 1200px) {
+/*body:before {
+  content: 'LARGE';
+  position: fixed;
+  z-index: 9999;
+  top:0;
+}*/
+ /*---GLOBALS---*/ 
+
+/*---HEADER---*/ 
+
+/*---CONTENT---*/
+
+/*---FOOTER---*/
+
+}/*---end large mq---*/
+
+
+/*===========MEDIUM (992px)==========*/
+
+@media only screen and (max-width: 992px) {
+/*  body:before {
+    content: 'MEDIUM';
+    position: fixed;
+    z-index: 9999;
+    top:0;
+  }*/
+  
+ /*---GLOBALS---*/ 
+
+body {
+    font-size: 0.75em;
+}
+ 
+ /*---HEADER---*/
+
+.nav-wrapper {
+  position: relative;
+
+  &__trigger {
+    top:-3px;
+    z-index: 999;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left:-110%;
+    width: 100%;
+    height:100vh;
+    display: grid;
+    align-content: center;
+    z-index: 100;
+    background: $brand-primary;
+    transition:left 0.5s ease;
+    box-shadow: 10px 0 10px -10px black;
+  ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    text-align: center;
+
+    li {
+
+      a {
+        display: block;
+        padding:0.5em;
+        font-size: 1.75em;
+        text-transform: uppercase;
+        color: white;
+        transform: translateX(-50px);   
+        opacity: 0.3;
+      }      
+    }
+  }
+  }
+   &.menu-open .nav-wrapper__menu {
+      left:0;
+      
+      a{
+        animation-name: example;
+        animation-duration: 0.3s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in-out;
+      }
+   }
+}
+
+.nav-wrapper li {
+
+      &:nth-of-type(2) a {
+                animation-duration: 0.4s !important;
+      }
+            &:nth-of-type(3) a {
+                animation-duration: 0.5s !important;
+      }
+            &:nth-of-type(4) a {
+                animation-duration: 0.7s !important;
+      }
+            &:nth-of-type(5) a {
+                animation-duration: 0.9s !important;
+      }    
+}
+
+nav {
+	min-height: 5em;
+	
+	
+	.hamburger-menu {
+		display: inline-block;
+	}
+	
+	#searchform {
+		right: 9em;
+	}
+	
+	.brand {
+		display: block;
+		left: 1.5em;
+		top: 1.5em;
+		width: auto;
+		
+		svg {
+			height: 50px;
+		}
+	}
+	
+	.mainMenu {
+		display: none;
+		
+		ul {
+			display: block;
+			margin-top: 10em;
+			
+			li {
+				display: block;
+				padding-bottom: 1em;
+				font-size: 1.5em;
+				
+				&:before {
+					bottom: -0.8em;
+				}
+			}
+		}
+	}
+}
+
+
+@keyframes example {
+  from {
+    transform: translateX(-100px);  
+    opacity: 0.3; 
+    }
+  to {
+    transform: translateX(0);  
+    opacity: 1; 
+  }
+}
+
+
+/*---CONTENT---*/
+
+.tour-booking {
+	
+	.wrapper-info .pick-info {
+		grid-template-columns: 100%;
+	}
+	
+	.spots-remaining {
+		grid-row: unset;
+		padding: 1em;
+	}
+}
+
+.gallery a:nth-of-type(n) {
+    width: 25%;
+}
+
+.large-carousel .large-carousel__item {
+	grid-template-columns: 40% 60%;
+	
+	.bottle {
+		height: 40vh;
+	}
+	
+	.content p {
+		width: 80%;
+	}
+}
+
+/*---FOOTER---*/
+  
+}/*---end medium mq---*/
+
+
+
+/*===========SMALL (768px)==========*/
+
+@media only screen and (max-width: 768px) {
+/*  body:before {
+    content: 'SMALL';
+    position: fixed;
+    z-index: 9999;
+    top:0;
+  }*/
+
+/*---GLOBALS---*/
+
+body {
+  font-size: 0.65em;
+}
+
+.h100 {
+  height: 75vh;
+}
+
+.h75 {
+    height: 50vh;
+}
+
+/*---HEADER---*/
+
+.wrapper-hero {
+  height: 50vh;
+}
+
+/*---CONTENT---*/
+
+.tour-booking {
+	grid-template-columns: 100%;
+	padding: 2em;
+}
+
+.gallery a:nth-of-type(n) {
+    width: 33.33%;
+}
+
+.product-wrapper {
+    width:calc(90% - 5em);
+    margin-top: 0;
+    margin-left:5em;
+}
+  
+/*---FOOTER---*/
+
+
+}/*---end small mq---*/
+
+
+/*===========EXTRA SMALL (576px)==========*/
+
+@media only screen and (max-width: 576px) {
+/*  body:before {
+    content: 'EXTRA SMALL';
+    position: fixed;
+    z-index: 9999;
+    top:0;
+  }*/
+  
+/*---GLOBALS---*/
+
+/*---HEADER---*/
+
+nav {
+    padding-top: 1em;
+}
+
+.telephone {
+    margin-top: 3px;
+}
+
+nav .brand,
+.telephone {
+  font-size: 1.5em;
+}
+
+body .hamburger-inner span {
+  top: -12px;
+}
+
+.nav-wrapper__menu ul li a {
+    font-size: 3em;
+}
+
+nav {
+	min-height: 7em;
+
+	.menu-actions {
+		font-size: 2em;
+		
+		& > * {
+			padding-left: 0.8em;
+		}
+	}
+
+	.brand {
+		svg {
+			height: 40px;
+		}
+	}
+	
+	#searchform.expand {
+		top: 7em;
+		right: 7%;
+		width: 84%;
+		
+		#s {
+    		width: 80%;
+		}
+	}
+}
+
+/*---CONTENT---*/
+
+#kglogo {
+    max-width: 150px;
+}
+
+.room-card__carousel {
+    min-height: 20em;
+}
+
+.three-quarters .icon-list {
+    column-count:2;
+}
+
+.multi-panel__lower-section__panel {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto auto;
+}
+
+.small-carousel .bottle:after {
+	width: 30%;
+	bottom: 10px;
+	left: 55%;
+}
+
+.small-carousel button:before {
+	width: 40px !important;
+	height: 40px !important;
+}
+
+.small-carousel .owl-stage-outer {
+    &:before,
+    &:after { 
+        display: none;
+    }
+}
+
+.small-carousel.owl-carousel .product-card {
+  grid-template-rows: 30em 3em;
+}
+
+#page .button {
+	font-size: 1.2em;
+}
+
+.row {
+	margin-left: 0;
+	margin-right: 0;
+	
+	.col-3 {
+		flex: 0 0 50%;
+		max-width: 50%;
+	}
+	
+	.col-6 {
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+	
+	.col-8 {
+		flex: 0 0 90%;
+		max-width: 90%;
+		margin-left: 5%;
+	}
+}
+
+.product-hero.kegbeer .bottle-wrapper img {
+	height: auto;
+	width:50%;
+	min-height: unset;
+	max-height: unset;
+}
+
+form.cart {
+    width: auto;
+}
+
+html body.woocommerce #page button.single_add_to_cart_button.button.alt,
+.locally {
+  width: 100%;
+  }
+
+.product-nav {
+	top: 25%;
+	width: 98%;
+	
+	.next:before, .previous:before {
+		width: 20px;
+	}
+}
+
+.product-wrapper {
+    margin-top:10em;
+	grid-template-columns: 100%;
+	grid-row-gap: 4em;
+    width: 100%;
+    margin-left: 0;	
+    
+	.product-wrapper__image {
+		text-align: center;
+		
+		img {
+			height: 50vh;
+			min-height: unset;
+			max-height: unset;
+		}
+		
+		.bottle-wrapper:before {
+			width: 50%;
+			right: 0%;
+		}
+		
+		.bottle-wrapper:after {
+			width: 50%;
+			bottom: 7px;
+			right: 10%;
+		}
+	}
+}
+
+.kegbeer .product-nav {
+    top:5em;
+}
+
+.product-wrapper__details {
+	
+	.heading, .mb2 {
+		text-align: center;
+	}
+	
+	.expanding-copy {
+		padding: 0 2em;
+		text-align: justify;
+	}
+	
+	.product-type-variable {
+		margin: 0 2em;
+		
+		.value {
+			text-align: center;
+			
+			span {
+				width: 100% !important;
+			}
+		}
+		
+		.single_add_to_cart_button, .locally {
+			width: 100% !important;
+		}
+		
+		.reset_variations {
+			display: inline-block !important;
+			float: unset !important;
+		}
+		
+		.woocommerce-variation {
+			text-align: center;
+			display: block;
+			padding: 0.5em 0;
+		}
+		
+		.quantity {
+			margin-left: 35% !important;
+		}
+	}
+}
+
+.process__item {
+	.col-4 {
+		flex: 90%;
+		max-width: 90%;
+		margin: 0 0 2em 0;
+		margin-left: 5%;
+	}
+	
+	.content {
+		width: 90%;
+		margin-left: 5%;
+		text-align: justify;
+		padding-left: 30px;
+		
+		img {
+			position: absolute;
+			width: 20px;
+			left: 20px;
+		}
+		
+		h3 {
+			display: block;
+			margin-bottom: 1em;
+		}
+	}
+}
+
+.about-carousel {
+	
+	.owl-nav {
+		top: 40% !important;
+	}
+	
+	.owl-stage-outer {
+		
+		&:before, &:after {
+			display: none;
+		}
+	}
+	
+	button.owl-prev, button.owl-next {
+		
+		&.owl-next {
+			right: 25px !important;
+		}
+		
+		&.owl-prev {
+			left: -15px !important;
+		}
+		
+		&:before {
+			width: 20px !important;
+		}
+		
+	}
+}
+
+.cycle-image {
+	max-width: 100%;
+	margin-bottom: 0;
+}
+
+.gallery a:nth-of-type(n) {
+    width: 50%;
+    height: 17em;
+}
+
+.large-carousel {
+	padding-bottom: 0;
+
+	.large-carousel__item {
+		grid-template-columns: 100%;
+		padding: 2em 2em 0 2em;
+		text-align: center;
+		
+		.bottle {
+			justify-self: center;
+			height: auto;
+			margin-bottom: 1em;
+			
+			img {
+				height: 20em;
+			}
+		}
+		
+		.content {
+			padding: 2em;
+			
+			p {
+				width: 100%;
+			}
+		}
+	}
+
+	.owl-nav button:before {
+		width: 20px !important;
+		height: 20px !important;
+	}
+
+	.owl-stage-outer:before, .owl-stage-outer:after {
+		display: none;
+	}
+}
+
+#map-contact .mapboxgl-ctrl-bottom-left:before {
+	font-size: 2em;
+}
+
+body.page-template-contact {
+	.col-5 {
+	    flex: 100%;
+	    max-width: 100%;
+	    text-align: center;
+	}
+	
+	.col-7 {
+	    flex: 100%;
+	    max-width: 100%;
+	    margin-top: 4em;
+	}
+	
+	main > .container {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+}
+
+body.page-template-blog {
+
+	.col-12, .col-8, .col-4 {
+		flex: 100% !important;
+		max-width: 100% !important;
+		margin-left: 0 !important;
+	}
+	
+	.post-summary__item {
+		display: block;
+		
+		.post-image {
+			height: 30vh;
+			width: 100%;
+		}
+		
+		h2 {
+			font-size: 2em;
+			padding-top: 0.5em;
+		}
+	}
+}
+
+body.search {
+	.col-4.search-card {
+	    flex: 100%;
+	    max-width: 100%;
+	}
+}
+
+.woocommerce-cart-form {
+	
+	.product-quantity {
+		height: 4em;
+		
+		.quantity {
+			float: right;
+			margin-top: -0.6em;
+		}
+	}
+	
+	.coupon {
+		width: 100%;
+		grid-template-columns: auto auto;
+		
+		&:before {
+			display: none !important;
+		}
+		
+		button {
+			width: 100% !important;
+		}
+	}
+}
+
+.cart-collaterals {
+	margin-bottom: 2em;
+}
+
+.woocommerce-billing-fields__field-wrapper, .woocommerce-shipping-fields__field-wrapper {
+	display: block !important;
+	
+	.form-row-first, .form-row-last {
+		width: 50% !important;
+	}
+}
+
+.woocommerce-checkout-review-order {
+	grid-template-columns: 100%;
+}
+
+.woocommerce ul.order_details li {
+	display: block;
+	width: 100%;
+	border-right: none;
+	padding-bottom: 1em;
+}
+
+.modal .modal-wrapper .modal-header {
+  top: 6em;
+
+  .modal-close i {
+      font-size: 2.5em;
+  }
+}
+
+.small-carousel.owl-carousel .product-card.small-beer .bottle-wrapper {
+  height: 100%;
+}
+
+body.woocommerce #page .quantity .minus, 
+body.woocommerce #page .quantity .plus,
+.woocommerce .quantity .qty {
+  height: 3em;
+}
+
+.product-nav .next {
+  max-width: 11em;
+}
+
+.find-cta .content {
+  padding: 3em 5em;
+}
+
+.product-nav .next a, .product-nav .previous a {
+    display: none;
+}
+
+.fullscreen-video {
+    max-height: 100%;
+}
+
+/*---FOOTER---*/
+
+.socket {
+    text-align: center;
+    
+    .text-right {
+        margin-top: 1em;
+        text-align: center !important;
+    }
+}
+
+}/*---end extra small mq---*/
+

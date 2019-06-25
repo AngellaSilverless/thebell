@@ -1,0 +1,598 @@
+/*! == COMPONENTS == */
+
+#page .button {
+    position: relative;
+    display: inline-block;
+    background: hsl(0, 1%, 15%);
+    margin: 0;
+    padding: 0.5em 1em;
+    text-align: left;
+    font-family: $body-font;  
+    font-weight: 200;
+    color: $brand-white;
+    vertical-align: middle;
+    -webkit-appearance: none;
+    border-radius: 0;
+    letter-spacing: 1px;
+    transition: all 0.5s ease;
+    text-rendering: geometricPrecision; /*fix rendering issues on different buttons*/
+
+    &:hover {
+        background:hsl(0, 0%, 8%);
+    }
+    
+    i {
+        position: absolute;
+        right: 0.25em;
+        top: 0.75em;
+        font-size: 1.25em;
+    }
+    
+    span {
+        display: block;
+        font-weight: 200;
+        text-transform: none;
+        font-style: italic;
+        font-size: 1.2em;
+    }
+    
+    &__ghost {
+        background:transparent;
+        border-color:$brand-dark-grey !important;
+        color: $brand-dark-grey;
+    }
+
+    &__subdued {
+        background:grey;
+        color: white;
+    }
+    
+    &__prompt {
+        position: relative;
+        text-align: left;
+        padding-right: 6em;
+        font-weight: 400;
+        font-size: 1.2em;
+        line-height: 1.5em;
+    
+        i {
+                position: absolute;
+                top: 20px;
+                right: 1em;
+                left:initial;
+                vertical-align: top;
+                font-weight: 600;
+                font-size: 3em;
+        }
+    
+        &:hover i {
+            right:0.75em;
+        }
+            
+    }
+    
+    &__inline {
+        display: inline;
+        padding:0.5em 3em;
+    }
+     
+    &__video {
+        display: block;
+        font-size: 3em;
+        text-align: center;
+        background: transparent;
+        border:none;
+        
+        
+        &:hover {
+            background:transparent;
+        }
+        
+        span {
+           font-size: 0.25em;
+           font-style: normal; 
+           line-height: 1em;
+        }
+        
+        i {
+            position: relative;
+            right: 0;
+            top: 0;
+            font-size: 1em;
+        }
+    }
+    
+    &__inline-cta {
+    
+        i {
+            vertical-align: sub;
+            line-height: 1.2em;
+            font-size: 1.5em;
+            margin-left: 0.5em;  
+        } 
+    }
+    
+    &__fullwidth {
+        display: block;
+        text-align: center;
+    }
+}
+
+.trigger-expand,
+.trigger-collapse {
+    position: relative;
+    margin-top: 2em;
+    font-family: $body-font;
+    letter-spacing: 2px;
+    color: hsl(0, 0%, 55%)!important;
+    background: hsl(0, 1%, 15%);
+    padding: 0.5em 3em;
+    transition: all 0.5s ease;
+    
+  &:hover {
+        background: hsl(0, 1%, 5%);
+        cursor:pointer;
+  }
+  
+  &.product {
+      background: none;
+      padding: 0;
+      margin: 0;
+  }
+  
+ }
+  
+.trigger-home {
+    padding: 0.5rem 4rem;
+    font-size: 1.2em;
+    margin-top: 2rem;
+    text-transform: none;
+    font-weight: 200;
+}
+
+.trigger-aboutus {
+    color: white !important;
+    font-family: $brand-font;
+    text-transform: none;
+    font-size: 1.2em;
+    margin-top: 2em;
+}
+
+a.next-section {
+    position: absolute;
+    bottom: 0;
+    display: block;
+    height: 4em;
+    transform: translateX(-50%);
+    left: 50%;
+    font-family:$supporting-font;
+    letter-spacing: 1px;
+    color: white;
+    margin-bottom: 1em;
+    z-index: 10;
+    
+     &:before {
+        position: absolute;
+        content: '';
+        bottom: -1em;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 3.5em;
+        height: 3.5em;
+        background:url(inc/img/arrow-shape.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        transition: bottom 0.5s ease;
+        border-radius: 50px;
+    }
+    
+    &:hover:before {
+        bottom:-10px;
+    }
+}
+
+.collapsed-content {
+    max-height: 0;
+    overflow: hidden; 
+    transition:max-height 0.5s ease;
+    
+    &.expand {
+        max-height: 100vh;
+    }
+}
+
+.logo-holder {
+    text-align: center;
+    margin-top: -10px;
+ 
+    #logo {
+        width:80px;
+        height:30px;
+    }
+
+    #thebell {
+        opacity:0.6;
+        transition:opacity 0.5s ease-in-out;
+    
+        path {
+            fill:$brand-secondary;
+        }
+    }
+
+    #created {
+        opacity:0;
+        transform: translateY(50px);
+        transition: 1s transform ease, 2s opacity ease;
+
+        path {
+            fill:$brand-secondary;
+        }
+    }
+
+    &:hover {
+        cursor:pointer;
+
+        #thebell {
+            opacity:0.8;
+        }
+
+        #created {
+              opacity:0.8;
+              transform: translateY(0);
+        }
+    }
+}
+
+.map-wrapper {
+	padding: 0;
+	border-bottom: 10px solid white;
+	width: 100%;
+	height: 100%;
+	
+	.heading {
+    	position: absolute;
+    	width: 100%;
+    	margin-top: 1em;
+    	text-align: center;
+    	z-index: 10;
+    	color: white;
+    	text-shadow: 0 0 20px black;
+    	
+        	svg {
+            	position: absolute;
+            	height:1em;
+            	width:1em;
+            	bottom: -1em;
+            	left:48%;
+            	fill:white;
+        	}
+	}
+}
+
+#map-contact,
+#brewery-map-contact {
+	width: 100%;
+	height: 100%;
+	
+	.marker {
+		background-color: white;
+		width: 30px;
+		height: 30px;
+		border: 5px solid hsl(0, 0%, 20%);
+		border-radius: 50%;
+		cursor: pointer;
+	}
+	
+	.mapboxgl-ctrl-bottom-left {
+        bottom: 0em;
+        left: 2em;
+        width: 25em;
+	}
+	
+	.mapboxgl-popup {
+		max-width: 200px;
+	}
+	
+	.mapboxgl-popup-content {
+		text-align: left;
+		background-color: $brand-white;
+		color: black;
+		padding: 1.1em;
+		
+		.mapboxgl-popup-close-button {
+			display: block;
+			border-color: #000000;
+		}
+		
+		.buttons-popup {
+			width: 100%;
+	        text-align: center;
+		
+			a {
+				line-height: 1.4em;
+				display: inline-block;
+		        width: 100%;
+		        background-color: black;
+		        border: 1px solid white;
+		        color: white;
+		        font-size: 14px;
+			    padding: 5px;
+			    margin: 5px 0px;
+			    letter-spacing: 0.1em;
+			    cursor: pointer;
+			    font-family: $body-font;
+			    font-weight: 200;
+			}
+		}
+		
+		div {
+			&.name {
+				text-transform: uppercase;
+			    font-size: 1.5em;
+			    letter-spacing: 0.15em;
+			    line-height: 1em;
+			    margin-bottom: 1em;
+
+			}
+			
+			&.address {
+				font-size: 1.2em;
+				color: #717171;
+			}
+			
+			&.phone {
+				font-size: 1.2em;
+			    margin: 0.5em 0em;
+			}
+		}
+	}
+	
+	.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
+	    border-top-color: $brand-white;
+	}
+}
+
+.mapboxgl-ctrl-bottom-right {
+    right: 2em;
+    bottom: 1em;
+}
+
+#tour-datepicker {
+	
+	display: none;
+	
+	.ui-datepicker-header {
+		width: 100%;
+		height: 3em;
+		line-height: 3em;
+		margin-bottom: 1em;
+	}
+	
+	.ui-datepicker-prev, .ui-datepicker-next {
+        height: 3em;
+        background: white;
+        border-radius: 0;
+        width: 4em;
+        line-height: 3em;
+		cursor: pointer;
+		overflow: hidden;
+		transition: border-color 0.3s ease;
+		position: relative;
+		text-align: center;
+		
+		&:before {
+		    content: '\f054';
+		    margin-left: 3px;
+		    font-family: "Font Awesome 5 Free";
+		    font-style: normal;
+		    font-weight: 900;
+		    line-height: 30px;
+		    transition: color 0.3s ease;
+		}
+		
+		&:hover, &:hover:before {
+			border-color: $brand-light-grey;
+			color: $brand-light-grey;
+		}
+		
+		span {
+			display: none;
+		}
+			
+	}
+	
+	.ui-datepicker-prev {
+		float: left;
+		transform: rotate(180deg);
+	}
+	
+	.ui-datepicker-next {
+		float: right;
+		margin-left: 12px;
+	}
+	
+	.ui-datepicker-title {
+		text-align: center;
+		font-size: 1.5em;
+		letter-spacing: 4px;
+		text-indent: 4px;
+		font-family: $brand-font;
+	}
+	
+	.ui-datepicker-calendar {
+		width: 100%;
+		text-align: center;
+		margin: 0;
+		
+			thead tr th span {
+				margin-bottom: 10px;
+				display: block;
+				text-transform: uppercase;
+				font-weight: normal;
+			}
+	}
+	
+	.ui-state-default {
+		margin: 0;
+		height: 50px;
+		background-color: white;
+		display: block;
+		text-decoration: none;
+		color: white;
+		border: 2px solid transparent;
+		line-height: 50px;
+		font-size: 20px;
+		letter-spacing: 4px;
+		text-indent: 4px;
+		background: #848484;
+		transition: background-color 0.3s ease;
+		cursor: pointer;
+		
+		&:hover {
+			background-color: rgba(93, 93, 93, 1);
+		}
+	}
+	
+	.ui-state-active {
+		background-color: $brand-primary;
+		
+		&:hover {
+			background-color: $brand-primary;
+		}
+	}
+	
+	.ui-datepicker-unselectable .ui-state-default {
+		color: grey;
+		cursor: default;
+        background-color: white;
+		border: 2px solid transparent;
+	}
+}
+
+.modal {
+    position: absolute;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    display: block;
+    
+    &.is-visible {
+	    visibility: visible;
+	    
+	    .modal-overlay {
+			opacity: 1;
+			visibility: visible;
+			transition-delay: 0s;
+		}
+		
+		.modal-transition {
+			transform: translateY(0) translateX(50%);
+			opacity: 1;
+		}
+	}
+	
+	.modal-overlay {
+		position: fixed;
+		z-index: 10;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: hsla(0, 0%, 0%, 0.6);
+		visibility: hidden;
+		opacity: 0;
+		transition: visibility 0s linear 0.3s, opacity 0.3s;
+	}
+	
+	.modal-wrapper {
+		border-radius: 0.3rem;
+		position: absolute;
+		z-index: 9999;
+		right: 50%;
+		width: 90vw;
+		margin-left: -16em;
+
+		.modal-header {
+            position: absolute;
+            top: 2em;
+            right: 2em;
+            z-index: 999999;
+			
+			.modal-close {
+				position: absolute;
+				top: 0;
+				right: 0;
+				padding: 1em;
+				color: white;
+				background: none;
+				border: 0;
+				outline: none;
+				cursor: pointer;
+  
+				i {
+					font-size: 1.3em;
+				}
+  
+				&:focus {
+					outline: none;
+				}
+				
+				&:hover {
+					color: $brand-light-grey;
+				}
+			}
+			
+			.modal-heading {
+				font-size: 1.125em;
+				margin: 0;
+				color: $brand-white;
+				font-family: $body-font;
+				font-weight: 200;
+				text-transform: uppercase;
+			}
+
+		}
+		
+		.modal-content {
+			padding: 1em;
+		
+			video {
+				position: relative;
+				width: 100%;
+				height: 75vh;
+				&:focus {
+    				outline:none;
+				}
+			}
+			
+			& > *:first-child {
+				margin-top: 0;
+			}
+			
+			& > *:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+	
+	.modal-transition {
+		transition: all 0.3s 0.12s;
+		transform: translateY(-10%) translateX(50%);
+		opacity: 0;
+	}
+}
+
+
+.wpcf7-not-valid-tip {
+	color: lighten($brand-primary, 10%) !important;
+	margin-top: -1em;
+	text-shadow: 1px 1px 1px #565656;
+}
+
+.wpcf7-response-output {
+	border: 2px solid $brand-primary !important;
+	background-color: $brand-dark-grey !important;
+}
