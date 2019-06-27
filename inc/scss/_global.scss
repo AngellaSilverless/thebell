@@ -1,12 +1,11 @@
 /*! == GLOBAL == */
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
 html {
     font-size: 18px;
-    overflow-y: scroll;
-    overflow-x: hidden;    
-    
-    &.no-scroll {
-	    overflow-y: hidden;
-    }
 }
  
 html,
@@ -70,8 +69,8 @@ h3, .h3 {
 }
 
 main {
+	position: relative;
     min-height: 100vh;
-    overflow: hidden;
 }
 
 p {
@@ -85,6 +84,7 @@ a {
     line-height: 1.2em;
     color: $brand-primary;
     transition:color 0.3s ease;
+    text-decoration: none;
 
     &:hover {
         text-decoration: none;
@@ -105,7 +105,7 @@ img {
 
 .heading {
     font-family: $brand-font;
-    color: $brand-dark;         
+    font-weight: 100;    
     
     &__alt {
         font-family: $supporting-font;        
@@ -213,46 +213,27 @@ header {
 }
 
 nav {
-	position:fixed;
-	top:0;
-	left:0;
-	display: grid;
-	justify-content:center;
+	position: absolute;
+	top: 0;
+	left: 0;
 	z-index: 200;
-	width:100%;
-	padding:1em;
+	width: 100%;
+	height: 100%;
+	color: white;
+	
+	.menu-trigger {
+		cursor: pointer;
+		font-size: 2em;
+		text-shadow: -1px -1px 2px rgba(0, 0, 0, 0.1), 1px -1px 2px rgba(0, 0, 0, 0.1), -1px 1px 2px rgba(0, 0, 0, 0.1), 1px 1px 2px rgba(0, 0, 0, 0.1);
+		
+		.title {
+			padding-left: 0.5em;
+		}
+	}
   
 	.container {
 		position: relative;
 	}
-  
-	&:before {
-		content:'';
-		position: absolute;
-		top:0;
-		left:0;
-		width:100%;
-		height:150%;
-        background-image: linear-gradient(hsla(0, 0%, 20%, 0.35), hsla(0, 0%, 0%, 0));
-		z-index: -1;
-		transition:all 1s ease;
-	}
-  
-	&:after {
-        @include childOverlay;
-        top:-100%;
-        background: white;
-        transition: top 1s ease;
-        transition: all 1s ease;
-	}  
-
-    &.dark:after {
-        top:0;
-    }
-    
-    &.dark:before {
-        top:-100%;
-    }
     
 	svg {
 		height:60px;
@@ -268,25 +249,22 @@ nav {
 
 	ul {
 		list-style: none;
-		margin:7em 0 1em;
-		padding:0;
-		font-family:$supporting-font;
-		font-weight:100;
-		letter-spacing:2px;
-		text-transform:uppercase;
-		transition:margin 1s ease;
+		margin: 7em 0 1em;
+		padding: 0;
+		font-family: $brand-font;
+		font-weight: 100;
+		letter-spacing: 2px;
+		transition: margin 1s ease;
 	
 		li {
-    		    position: relative;
-			display:inline-block;
+    		position: relative;
 			padding:0;
 			color: white;
 		
 			a {
-    			    display: block;
-    			    padding: 0.25em 1.5em;
-    			    font-size: 0.85em;
-    			    line-height: 1.5em;
+			    display: block;
+			    padding: 0.25em 0;
+			    line-height: 1.5em;
 				color: white;
 				transition: color 1s ease;
 			}
@@ -294,11 +272,10 @@ nav {
 			&.current-menu-item:before {
                 position: absolute;
                 content: '';
-                bottom: -2.5em;
-                left: 50%;
-                width: 40px;
+                bottom: -2em;
+				width: 50px;
+				height: 2em;
                 height: 2em;
-                margin-left: -25px;
                 background: url(inc/img/line.svg);
                 filter: brightness(1000%);
                 background-size: contain;
@@ -306,6 +283,11 @@ nav {
                 transform: scaleX(0);
                 transform-origin: left;
                 transition: transform 1s ease;
+                transition-delay: 0.3s;
+			}
+			
+			&.loaded::before {
+				transform: scaleX(1);
 			}
 		}
 	}
@@ -317,32 +299,6 @@ nav {
             color: $brand-dark-grey !important;
         }
     }
-}
-
-.loaded .current-menu-item:before {
-    transform: scaleX(1);
-}
-
-.loaded .dark .current-menu-item:before{
-   filter: brightness(500%); 
-}
-
-.dark svg {
-	height:40px;
-	margin: 0 auto -1em;
-
-	#head path,
-	#text path {
-		fill:$brand-dark-grey;
-	}
-
-	#text {
-		display: none;
-	}
-}
-
-nav.dark ul li a {
-    color: white;
 }
 
 .brand {
@@ -376,35 +332,51 @@ nav.dark ul li a {
 
 /*===========FOOTER==========*/
 
-.socket {
-    width:100%;
-    padding: 1em 15px;
-    font-size: 0.75em;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: $brand-dark-grey;
-    background:white;
-    
-    a {
-        color: $brand-dark-grey;
-    }
-    
-    i {
-      margin-right: 1em;
-    }
-        
-    &__colophon {
-      text-align: right;
-      a {
-        margin-left:0.5em;
-        padding-left:0.5em;
-        border-left: 1px solid hsl(11, 95%, 72%);
-        color: $brand-dark-grey;
-      }
-    }
-  }
-
-.socials a {
-    padding: 0 1em;
-    color: white;
+footer {
+		
+	a {
+		color: $brand-tertiary;
+		
+		&:hover {
+			color: white;
+		}
+	}
+	
+	.pre-socket {
+		padding: 2em 1em;
+		background: $brand-primary;
+		color: $brand-tertiary;
+		
+		.socials a {
+		    color: $brand-light-grey;
+		
+			&:hover {
+				color: white;
+			}
+		    
+		    &:not(:first-child) {
+			    margin-left: 1em;
+		    }
+		}
+		
+		.title {
+			text-transform: uppercase;
+		}
+		
+		.bold {
+			color: $brand-light-grey;
+			font-weight: 400;
+		}
+		
+		.italic {
+			font-style: italic
+		}
+	}
+	
+	.socket {
+		letter-spacing: 1px;
+		background: $brand-dark-grey;
+		color: $brand-tertiary;
+		padding: 1em;
+	}
 }

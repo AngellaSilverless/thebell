@@ -31,46 +31,36 @@
 <body <?php body_class(); ?>>
 
     <div id="page" class="site-wrapper">
-    
-        <nav id="nav">
-    	    <?php get_search_form(); ?>
-    	    
-    	    <div class="menu-actions">
-	    	    
-	    	    <i class="search-trigger fas fa-search"></i>
-	    	    
-		        <a href="/cart" class="cart-button"><i class="fas fa-shopping-basket"></i></a>	  
-		        
-		        <i class="hamburger-menu fas fa-bars"></i>
-		        
-    	    </div>
-	                      
-            <div class="brand">
-        
-                <a href="<?php echo home_url(); ?>" alt="<?php wp_title(''); ?>" title="<?php wp_title(''); ?>">
-                
-                <?php get_template_part('template-parts/thebell', 'logo');?>
-                
-                </a>
-        
-            </div>                    
-        
-            <?php
-                wp_nav_menu( array(
-                'theme_location' => 'main-menu',
-                'container_class' => 'mainMenu' ) );
-            ?>
 	    
+	    <div class="telephone"><?php echo get_field("contact_info", "options")["telephone"]; ?></div>
+	    
+	    <main><!--closes in footer.php-->
+	    
+	    <nav id="nav">
+		    
+		    <div class="menu-trigger">
+			    
+			    <i class="fas fa-bars"></i>
+			    
+			    <span class="heading title">Menu</span>
+			    
+		    </div>             
+
+			<div class="menu-collapse">
+			
+				<div class="wrapper-menu">
+					<?php
+					    wp_nav_menu( array(
+					    'theme_location' => 'main-menu',
+					    'container_class' => 'mainMenu' ) );
+					?>
+					
+					<a class="button mb2">Book a room</a>
+					<a class="button">Book a table</a>
+				
+				</div>
+			
+			</div>
+
 	    </nav>
-
-    <?php if(is_front_page()): ?>
-    
-    <!-- Modal Video -->
-    
-	<?php get_template_part('template-parts/modal');?>
-	
-	<!-- Modal Video END -->
-	
-	<?php endif; ?>
-
-<main><!--closes in footer.php-->
+	    

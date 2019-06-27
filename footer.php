@@ -8,54 +8,116 @@
 </main>
 
 <footer class="footer">
-
-    <div class="details">
-    
-        <?php get_template_part('template-parts/thebell', 'logo');?>        
+	
+    <div class="pre-socket">
+	    
+	    <div class="container pb2">
+		    
+		    <?php get_template_part('template-parts/ramsbury', 'logo');?>
+		    
+	    </div>
+	    
+	    <div class="container cols-3">
+		    
+		    <div class="col">
+			    
+			    <?php if(have_rows("contact_info", "options")): while(have_rows("contact_info", "options")): the_row(); ?>
+			    
+			    <div class="mb1"><?php the_sub_field("telephone");?></div>
+			    
+			    <div class="mb1"><?php the_sub_field("email");?></div>
+			    
+			    <?php endwhile; endif; ?>
+			    
+			    <div class="socials mt2">
         
-        <p class="mt2"><?php the_field('footer_heading', 'option');?></p>      
-         
-        <p><?php the_field('shop_address', 'option');?></p>             
-        
-        <p><?php the_field('shop_telephone', 'option');?></p>          
-    
-        <div class="socials mt1">
-        
-            <?php if( have_rows('social_links', 'option') ): while( have_rows('social_links', 'option') ): the_row(); ?>
-            
-            <a href="<?php the_sub_field('page_link'); ?>"><i class="fab fa-<?php the_sub_field('name'); ?>"></i></a>
-            
-            <?php endwhile; endif; ?>
-        
-        </div>
+					<?php if(have_rows("social_links", "option")): while(have_rows("social_links", "option")): the_row(); ?>
+					
+					<a href="<?php the_sub_field("page_link"); ?>"><i class="fab fa-<?php the_sub_field("name"); ?>"></i></a>
+					
+					<?php endwhile; endif; ?>
+				
+				</div>
+			    
+		    </div>
+		    
+		    <div class="col">
+			    
+			    <div class="title">Opening Times</div>
+			    
+			    <?php if(have_rows("opening_times", "options")): while(have_rows("opening_times", "options")): the_row(); ?>
+			    
+			    <div class="mt1"><?php the_sub_field("heading");?></div>
+			    
+			    <div class="bold"><?php the_sub_field("description");?></div>
+			    
+			    <?php if(get_sub_field("observation")): ?>
+			    
+			    <div class="italic"><?php the_sub_field("observation");?></div>
+			    
+			    <?php endif; endwhile; endif; ?>
+			    
+		    </div>
+		    
+		    <div class="col">
+			    
+			    <div class="title">Food Times</div>
+			    
+			    <?php if(have_rows("food_times", "options")): while(have_rows("food_times", "options")): the_row(); ?>
+			    
+			    <div class="mt1"><?php the_sub_field("heading");?></div>
+			    
+			    <div class="bold"><?php the_sub_field("description");?></div>
+			    
+			    <?php if(get_sub_field("observation")): ?>
+			    
+			    <div class="italic"><?php the_sub_field("observation");?></div>
+			    
+			    <?php endif; endwhile; endif; ?>
+			    
+		    </div>
+			
+		    <div class="col links-wrapper">
+			    
+			    <div class="links">
+			    
+				    <div class="title mb1">Web Links</div>
+				    
+				    <?php if(have_rows("web_links", "options")): while(have_rows("web_links", "options")): the_row(); ?>
+				    
+				    <?php $url = get_sub_field("url");
+				    
+				    $visible_url = str_replace(array("http://", "https://"), "", $url);
+				    
+				    $visible_url = rtrim(trim($visible_url), '/'); ?>
+				    
+				    <div><a href="<?php echo $url; ?>"><?php echo $visible_url;?></a></div>
+				    
+				    <?php endwhile; endif; ?>
+				
+			    </div>
+			    
+		    </div>
+		    
+	    </div>
 
     </div>
+    
+    <div class="socket">
+	    
+	    <div class="container cols-6">
+                
+	        <div class="col text-left">&copy; The Bell at Ramsbury <?php echo date ('Y');?></div>
+	        
+	        <div class="col text-right">
+	        
+		        <a href="/privacy-policy">Privacy Policy</a> | <a href="/terms-conditions">Terms & Conditions</a>
+		    
+	        </div>
+	    
+	    </div>
 
-    <div class="container-fluid pl0 pr0">
-    
-        <div class="socket">
-    
-            <div class="row">
-    
-                <div class="col-6">
-                    
-                    &copy; The Bell at Ramsbury <?php echo date ('Y');?> | 
-                    
-                    <a href="/terms-conditions">Terms & Conditions</a> | 
-                    
-                    <a href="/privacy">Privacy Policy</a>
-                        
-                </div>
-        
-                <div class="col-6 text-right">
-
-                </div>
-        
-            </div><!--row-->
-    
-        </div><!--socket-->
-    
-    </div><!--container-->
+    </div><!--socket-->
 
 </footer>
 

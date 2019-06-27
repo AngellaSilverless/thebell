@@ -12,47 +12,7 @@ jQuery(document).ready(function( $ ) {
         $(this).addClass("loaded");
 
         next();
-    }); 
-
-    $(document).ready(function( $ ) {
-      $( ".toggle" ).first().addClass( "active" );
     });
-
-/* GET HEIGHT OF NAV*/
-    
-    $(document).ready(function() {
-        var element = document.getElementById('nav');
-        var navHeight = element.offsetHeight;
-        //Use height var to set padding of page content
-        $(".content.no-hero").css("padding-top", navHeight);   
-    });
-
-/* ADJUST NAV ON SCROLL*/
-
-$(function() {
-    //caches a jQuery object containing the header element
-    var header = $("nav");
-    
-    $(document).ready(function( $ ) {
-		var scroll = $(window).scrollTop();
-		
-		if (scroll >= 10) {
-			header.addClass("dark");
-		} else {
-			header.removeClass("dark");
-		}
-    });
-    
-    $(window).scroll(function() {
-        var scroll = $(window).scrollTop();
-
-        if (scroll >= 50) {
-            header.addClass("dark");
-        } else {
-            header.removeClass("dark");
-        }
-    });
-});
  
 //Smooth Scroll
 
@@ -572,40 +532,29 @@ $(function() {
     });
 
 
-
-
-
-
-/* PLAY AND PAUSE VIDEO HOME */
-	
-	$(document).ready(function() {
-		
-		$(".modal-toggle.play-video").on("click", function() {
-			$('.modal .video')[0].currentTime = 0;
-			$('.modal .video')[0].play();
-			$('.modal').toggleClass('is-visible');
-			$('html').toggleClass('no-scroll');
-		});
-		
-		$(".modal-toggle.pause-video").on("click", function() {
-			$('.modal .video')[0].pause();
-			$('.modal').toggleClass('is-visible');
-			$('html').toggleClass('no-scroll');
-		});
-		
-	});
-
 // ========== Controller for lightbox elements
 
-    $(document).ready(function() {
-
-        $('.lightbox-gallery').magnificPopup({
-            type: 'image',
-            gallery:{
-                enabled:true
-            }
-        });
+    $('.lightbox-gallery').magnificPopup({
+        type: 'image',
+        gallery:{
+            enabled:true
+        }
     });
+    
+    $('.single-image').magnificPopup({
+		type: 'image',
+		closeOnContentClick: true,
+		closeBtnInside: false,
+		fixedContentPos: true,
+		mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
+		image: {
+			verticalFit: true
+		},
+		zoom: {
+			enabled: true,
+			duration: 300 // don't foget to change the duration also in CSS
+		}
+	});
  
 // GLOBAL OWL CAROUSEL SETTINGS
 
@@ -627,21 +576,27 @@ $(function() {
         }
     });
 
-    $('.small-carousel').owlCarousel({
+    $('.owl-carousel').owlCarousel({
         loop:true,
         autoplay:false,
         autoplayHoverPause:true,
-        nav:false,
+        nav:true,
     	    navClass: ['owl-prev', 'owl-next'],
         responsive:{
             0:{
-                items:1
+                items: 1
             },
-            600:{
-                items:4
+            768: {
+	            items: 2
             },
-            1000:{
-                items:7
+            992:{
+                items: 3
+            },
+            1200: {
+	            items: 4
+            },
+            1600: {
+                items: 5
             }
         }
     });
@@ -681,80 +636,58 @@ $(function() {
     });
 
 /* CLASS AND FOCUS ON CLICK */
-
-    $(".trigger-copy-expand").click(function(event) {
-      $('.collapsed-content').addClass("expand");
-      $(this).hide();
-       $('.trigger-copy-collapse').show();     
-    });
-
-    $(".trigger-copy-collapse").click(function(event) {
-        $('.collapsed-content').removeClass("expand");
-        $(this).hide();
-        $('.trigger-copy-expand').show();     
-    });
-
-    $(".trigger-expand").click(function(event) {
-	    $(this).closest('.expanding-copy').find('.trigger-expand').hide()
-        $(this).closest('.expanding-copy').addClass("expand");
-	    $(this).closest('.expanding-copy').find('.trigger-collapse').show()
-    });
-
-    $(".trigger-collapse").click(function(event) {
-	    var that = this;
-        $(this).closest('.expanding-copy').removeClass("expand");
-        setTimeout(function() {
-	        $(that).closest('.expanding-copy').find('.trigger-collapse').hide()
-	        $(that).closest('.expanding-copy').find('.trigger-expand').show();
-	    }, 500);
-    });
-
-    $(".toggle").click(function() {   
-      	$('.toggle.active').removeClass("active"); 
-        $(this).addClass("active");   
-    });
-
-    $(".search-trigger").click(function() {
-        $('#searchform').addClass("expand");
-        $(this).hide();
+    
+    $(".menu-trigger").click(function() {
+	    $(".menu-collapse").toggleClass("visible");
+	    $(".current-menu-item").toggleClass("loaded");
     });
     
-    $(".hamburger-menu").click(function() {
-	    var header = $("nav");
-	    header.addClass("dark");
-		$(".mainMenu").slideToggle();
-		header.toggleClass("nav-collapse");
-		
-		var scroll = $(window).scrollTop();
-		
-		if(!header.hasClass("nav-collapse")) { 
-			if (scroll >= 10) {
-				header.addClass("dark");
-			} else {
-				header.removeClass("dark");
-			}
-		}
-	    
-    });
-    
-// ==========Add AJAX functions to quantity buttons on product pages
 
-$(document).on('click', '.plus', function(e) { // replace '.quantity' with document (without single quote)
-    $input = $(this).prev('input.qty');
-    var val = parseInt($input.val());
-    var step = $input.attr('step');
-    step = 'undefined' !== typeof(step) ? parseInt(step) : 1;
-    $input.val( val + step ).change();
-});
-$(document).on('click', '.minus',  // replace '.quantity' with document (without single quote)
-    function(e) {
-    $input = $(this).next('input.qty');
-    var val = parseInt($input.val());
-    var step = $input.attr('step');
-    step = 'undefined' !== typeof(step) ? parseInt(step) : 1;
-    if (val > 0) {
-        $input.val( val - step ).change();
-    }
+// ========== Add class if in viewport on page load
+
+$.fn.isOnScreen = function(){
+    
+    var win = $(window);
+    
+    var viewport = {
+        top : win.scrollTop(),
+        left : win.scrollLeft()
+    };
+    viewport.right = viewport.left + win.width();
+    viewport.bottom = viewport.top + win.height();
+    
+    var bounds = this.offset();
+    bounds.right = bounds.left + this.outerWidth();
+    bounds.bottom = bounds.top + this.outerHeight();
+    
+    return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
+    
+};
+
+	$('.slide-up, .slide-down, .slide-right, .slow-fade').each(function() {
+		if ($(this).isOnScreen()) {
+			$(this).addClass('active');    
+		} 
+	});
+
+// ========== Add class on entering viewport
+
+$.fn.isInViewport = function() {
+var elementTop = $(this).offset().top;
+var elementBottom = elementTop + $(this).outerHeight();
+var viewportTop = $(window).scrollTop();
+var viewportBottom = viewportTop + $(window).height();
+return elementBottom > viewportTop && elementTop < viewportBottom;
+};
+
+$(window).on('resize scroll', function() {
+	
+	$('.slide-up, .slide-down, .slide-right, .slow-fade').each(function() {
+		if ($(this).isInViewport()) {
+			$(this).addClass('active');    
+		} 
+	});
+    
 });
 
 });//Don't remove ---- end of jQuery wrapper

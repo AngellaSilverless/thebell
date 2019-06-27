@@ -1,24 +1,26 @@
 /*! == COMPONENTS == */
 
-#page .button {
+.button {
     position: relative;
     display: inline-block;
-    background: hsl(0, 1%, 15%);
     margin: 0;
-    padding: 0.5em 1em;
+    padding: 0.75em 1em;
+    color: $brand-mid-grey;
+    background: white;
+    text-transform: uppercase;
     text-align: left;
-    font-family: $body-font;  
-    font-weight: 200;
-    color: $brand-white;
+    font-family: $body-font;
+    font-weight: 400;
     vertical-align: middle;
     -webkit-appearance: none;
     border-radius: 0;
     letter-spacing: 1px;
     transition: all 0.5s ease;
     text-rendering: geometricPrecision; /*fix rendering issues on different buttons*/
+    cursor: pointer;
 
     &:hover {
-        background:hsl(0, 0%, 8%);
+        background: $brand-light-grey;
     }
     
     i {
@@ -35,127 +37,19 @@
         font-style: italic;
         font-size: 1.2em;
     }
-    
-    &__ghost {
-        background:transparent;
-        border-color:$brand-dark-grey !important;
-        color: $brand-dark-grey;
-    }
-
-    &__subdued {
-        background:grey;
-        color: white;
-    }
-    
-    &__prompt {
-        position: relative;
-        text-align: left;
-        padding-right: 6em;
-        font-weight: 400;
-        font-size: 1.2em;
-        line-height: 1.5em;
-    
-        i {
-                position: absolute;
-                top: 20px;
-                right: 1em;
-                left:initial;
-                vertical-align: top;
-                font-weight: 600;
-                font-size: 3em;
-        }
-    
-        &:hover i {
-            right:0.75em;
-        }
-            
-    }
-    
-    &__inline {
-        display: inline;
-        padding:0.5em 3em;
-    }
-     
-    &__video {
-        display: block;
-        font-size: 3em;
-        text-align: center;
-        background: transparent;
-        border:none;
-        
-        
-        &:hover {
-            background:transparent;
-        }
-        
-        span {
-           font-size: 0.25em;
-           font-style: normal; 
-           line-height: 1em;
-        }
-        
-        i {
-            position: relative;
-            right: 0;
-            top: 0;
-            font-size: 1em;
-        }
-    }
-    
-    &__inline-cta {
-    
-        i {
-            vertical-align: sub;
-            line-height: 1.2em;
-            font-size: 1.5em;
-            margin-left: 0.5em;  
-        } 
-    }
-    
-    &__fullwidth {
-        display: block;
-        text-align: center;
-    }
-}
-
-.trigger-expand,
-.trigger-collapse {
-    position: relative;
-    margin-top: 2em;
-    font-family: $body-font;
-    letter-spacing: 2px;
-    color: hsl(0, 0%, 55%)!important;
-    background: hsl(0, 1%, 15%);
-    padding: 0.5em 3em;
-    transition: all 0.5s ease;
-    
-  &:hover {
-        background: hsl(0, 1%, 5%);
-        cursor:pointer;
-  }
-  
-  &.product {
-      background: none;
-      padding: 0;
-      margin: 0;
-  }
-  
- }
-  
-.trigger-home {
-    padding: 0.5rem 4rem;
-    font-size: 1.2em;
-    margin-top: 2rem;
-    text-transform: none;
-    font-weight: 200;
-}
-
-.trigger-aboutus {
-    color: white !important;
-    font-family: $brand-font;
-    text-transform: none;
-    font-size: 1.2em;
-    margin-top: 2em;
+	
+	
+	&__dark {
+		background: $brand-mid-grey;
+		color: white;
+		font-weight: 100;
+		padding: 0.75em 3em;
+		
+		&:hover {
+			background: darken($brand-mid-grey, 10%);
+			color: white;
+		}
+	}
 }
 
 a.next-section {
@@ -188,16 +82,6 @@ a.next-section {
     
     &:hover:before {
         bottom:-10px;
-    }
-}
-
-.collapsed-content {
-    max-height: 0;
-    overflow: hidden; 
-    transition:max-height 0.5s ease;
-    
-    &.expand {
-        max-height: 100vh;
     }
 }
 
@@ -295,7 +179,6 @@ a.next-section {
 	
 	.mapboxgl-popup-content {
 		text-align: left;
-		background-color: $brand-white;
 		color: black;
 		padding: 1.1em;
 		
@@ -345,10 +228,6 @@ a.next-section {
 			    margin: 0.5em 0em;
 			}
 		}
-	}
-	
-	.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
-	    border-top-color: $brand-white;
 	}
 }
 
@@ -548,7 +427,6 @@ a.next-section {
 			.modal-heading {
 				font-size: 1.125em;
 				margin: 0;
-				color: $brand-white;
 				font-family: $body-font;
 				font-weight: 200;
 				text-transform: uppercase;

@@ -138,16 +138,4 @@ function remove_menus(){
 }
 add_action( 'admin_menu', 'remove_menus' );
 
-
-function jh_add_script_to_footer(){
-    if( ! is_admin() ) { ?>
-    <script>
-  
-jQuery(document).ready(function($){
-
-});
-</script>
-<?php
-    }
-}
-add_action( 'wp_footer', 'jh_add_script_to_footer' );
+add_theme_support( 'post-thumbnails' );

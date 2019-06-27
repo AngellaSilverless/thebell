@@ -33,14 +33,28 @@ $sides: (top, bottom, left, right); // Sides var
 $height: (0, 25, 50, 75, 100); // Amount string.
 
 @each $amount in $height {
-        .h#{$amount} {
-            height: #{$amount}vh;
+    .h#{$amount} {
+        height: #{$amount}vh;
     }
 }
 
 .h-auto {
     height:auto; /*Required for CSS Grid elements*/
     padding-bottom: 3em;
+}
+
+/* Alignment */
+
+.text-center {
+	text-align: center;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
 }
 
 /* Typography */
@@ -67,6 +81,47 @@ $weight: (100, 200, 300, 400, 500, 600, 700, 800, 900); // Amount string.
     }
 }
 
+.slide-up {
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all 1s ease;
+    
+    &.active {
+        transform:translateY(0);
+        opacity: 1;
+    }
+}
+
+.slide-down {
+    transform: translateY(-50px);
+    opacity: 0;
+    transition: all 1s ease;
+    
+    &.active {
+        transform:translateY(0);
+        opacity: 1;
+    }
+}
+
+.slide-right {
+    transform: translate(-100px, 50px);
+    opacity: 0;
+    transition: all 2s ease;
+    
+    &.active {
+        transform:translate(0, 0);
+        opacity: 1;
+    }
+}
+
+.slow-fade {
+    opacity:0;
+    transition:opacity 3s ease;
+    
+    &.active {
+        opacity:1;
+    }
+}
 
 
 
