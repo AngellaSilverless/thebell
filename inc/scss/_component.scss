@@ -42,13 +42,18 @@
 	&__dark {
 		background: $brand-mid-grey;
 		color: white;
-		font-weight: 100;
 		padding: 0.75em 3em;
 		
 		&:hover {
 			background: darken($brand-mid-grey, 10%);
 			color: white;
 		}
+	}
+	
+	&__transparent {
+		background: transparent;
+		color: $brand-mid-grey;
+		border: 1px solid $brand-mid-grey;
 	}
 }
 

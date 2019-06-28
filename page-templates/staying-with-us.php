@@ -1,6 +1,6 @@
 <?php
 /**
- * ============== Template Name: Standard Pages
+ * ============== Template Name: Staying With Us
  *
  * @package thebell
  */
@@ -14,17 +14,39 @@ get_header();?>
 	
 	<h1 class="heading heading__lg heading__light slow-fade mt2 page-title"><?php the_field("hero_heading"); ?></h1>
 	
+	
+	
+	
+	
+	
+	
+	
+	
 	<div class="wrapper-content">
 		
-		<?php $copy = get_field("copy"); if($copy): ?>
+		<!-- Copy -->
 		
-		<div class="copy"><?php echo $copy; ?></div>
+		<?php $copy = get_field("copy"); if($copy["intro"]): ?>
+		
+		<div class="copy"><?php echo $copy["intro"]; ?></div><br>
+		
+		<?php endif; ?>
+		
+		<?php if($copy["read_more"]): ?>
+		
+		<div class="copy expand mb2"><?php echo $copy["read_more"]; ?></div>
+		
+		<div class="read-more">Read more</div>
 		
 		<?php endif; ?>
 		
 		<?php $images = get_field("gallery"); if($images): ?>
 		
-		<div class="gallery-carousel gallery owl-carousel mt5">
+		<!-- Copy END -->
+		
+		<!-- Gallery -->
+		
+		<div class="gallery-carousel gallery owl-carousel mt2">
 			
 			<?php foreach($images as $image): ?>
 			
@@ -40,13 +62,19 @@ get_header();?>
 			
 		<?php endif; ?>
 		
+		<!-- Gallery END -->
+		
+		<!-- Actions -->
+		
 		<div class="wrapper-buttons mt2 mb2">
 			
 			<a class="button button__dark">Book a table</a>
 			
-			<a class="button button__dark">Book a room</a>
+			<a class="button button__dark ml1">Book a room</a>
 			
 		</div>
+		
+		<!-- Actions END -->
 		
 	</div>
 

@@ -1,7 +1,4 @@
 //@prepros-prepend jquery.magnific-popup.js
-//@prepros-prepend mixitup.js
-//@prepros-prepend mixitup-pagination.js
-//@prepros-prepend jquery.magnific-popup.js
 //@prepros-prepend owl.carousel.min.js
 
 jQuery(document).ready(function( $ ) {
@@ -594,9 +591,6 @@ jQuery(document).ready(function( $ ) {
             },
             1200: {
 	            items: 4
-            },
-            1600: {
-                items: 5
             }
         }
     });
@@ -640,6 +634,11 @@ jQuery(document).ready(function( $ ) {
     $(".menu-trigger").click(function() {
 	    $(".menu-collapse").toggleClass("visible");
 	    $(".current-menu-item").toggleClass("loaded");
+    });
+    
+    $(".read-more").click(function() {
+	    $(this).prev().slideToggle();
+	    $(this).text($(this).text() == "Read more" ? "Read less" : "Read more");
     });
     
 

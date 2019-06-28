@@ -32,7 +32,15 @@
 
     <div id="page" class="site-wrapper">
 	    
-	    <div class="telephone"><?php echo get_field("contact_info", "options")["telephone"]; ?></div>
+	    <div class="info-header">
+		    
+		    <a class="button">Book a room</a>
+			
+			<a class="button">Book a table</a>
+	    
+	    	<div class="telephone"><?php echo get_field("contact_info", "options")["telephone"]; ?></div>
+	    	
+	    </div>
 	    
 	    <main><!--closes in footer.php-->
 	    
@@ -54,10 +62,6 @@
 					    'theme_location' => 'main-menu',
 					    'container_class' => 'mainMenu' ) );
 					?>
-					
-					<a class="button mb2">Book a room</a>
-					<a class="button">Book a table</a>
-				
 				</div>
 			
 			</div>

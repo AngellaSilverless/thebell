@@ -22,52 +22,56 @@
     &.no-gutter-c {
         grid-column-gap:0;
     }
+    
+    &.gutter-sm {
+	    grid-gap: 1em;
+    }
 
-    &.align-horiz-l >div{
+    &.align-horiz-l > .col {
         justify-self: flex-start;
     }
 
-    &.align-horiz-c >div{
+    &.align-horiz-c > .col {
         justify-self: center;
     }
 
-    &.align-horiz-r >div{
+    &.align-horiz-r > .col {
         justify-self: flex-end;
     }
 
-    &.align-vert-t >div{
+    &.align-vert-t > .col {
         align-self: flex-start;
     }
 
-    &.align-vert-c >div{
+    &.align-vert-c > .col {
         align-self: center;
     }
 
-    &.align-vert-b >div{
+    &.align-vert-b > .col {
         align-self: flex-end;
     }
 
-     > div {
+    > .col {
         grid-column: span 12;
     }
     
-    &.cols-2 > div {
+    &.cols-2 > .col {
         grid-column: span 2;
     }
     
-    &.cols-3  > div {
+    &.cols-3  > .col {
         grid-column: span 3;
     }    
 
-    &.cols-4  > div {
+    &.cols-4  > .col {
         grid-column: span 4;
     }
 
-    &.cols-6 > div {
+    &.cols-6 > .col {
         grid-column: span 6;
     }
     
-    &.cols-12 > div {
+    &.cols-12 > .col {
         grid-column: span 12;
     }
     
@@ -125,15 +129,6 @@
     }    
 }
 
-.cols-4-8 {
-    .col:nth-of-type(1n) {
-        grid-column: span 4;      
-    }
-    .col:nth-of-type(2n) {
-        grid-column: span 8;     
-    }    
-}
-
 /*===========MEDIA QUERIES==========*/
 
 @each $name, $size in $breakpoints {
@@ -142,7 +137,7 @@
 		
 		@for $i from 1 through $col-count {
 			
-			.container.cols-#{$name}-#{$i} >div {
+			.container.cols-#{$name}-#{$i} > .col {
 				grid-column: span $i;
 			}
 		}

@@ -47,6 +47,24 @@ $background = get_field("posts_field", $page_news)["background_image"]; if($back
 			</div>
 			
 		</div>
+		
+		<?php $images = get_field("gallery"); if($images): ?>
+		
+		<div class="gallery-carousel gallery owl-carousel mt5">
+			
+			<?php foreach($images as $image): ?>
+			
+			<div class="wrapper-image">
+				
+				<a href="<?php echo $image['url']; ?>" class="lightbox-gallery"  alt="<?php echo $image['alt']; ?>" style="background-image: url(<?php echo $image['url']; ?>);"></a>
+				
+			</div>
+			
+			<?php endforeach; ?>
+		
+		</div>
+			
+		<?php endif; ?>
 	
 		<div class="wrapper-buttons align-right">
 			

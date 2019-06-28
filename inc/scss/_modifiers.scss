@@ -62,8 +62,8 @@ $height: (0, 25, 50, 75, 100); // Amount string.
 $weight: (100, 200, 300, 400, 500, 600, 700, 800, 900); // Amount string.
 
 @each $amount in $weight {
-        .font#{$amount} {
-            font-weight: #{$amount};
+    .font#{$amount} {
+        font-weight: #{$amount};
     }
 }
 
