@@ -14,19 +14,15 @@ get_header();?>
 	
 	<h1 class="heading heading__lg heading__light slow-fade mt2 page-title"><?php the_field("hero_heading"); ?></h1>
 	
+	<?php if(have_rows("rooms")): while(have_rows("rooms")): the_row(); ?>
 	
-	
-	
-	
-	
-	
-	
-	
-	<div class="wrapper-content">
+	<div class="wrapper-content mb4">
 		
+		<div class="title"><?php the_sub_field("title"); ?></div>
+	
 		<!-- Copy -->
 		
-		<?php $copy = get_field("copy"); if($copy["intro"]): ?>
+		<?php $copy = get_sub_field("copy"); if($copy["intro"]): ?>
 		
 		<div class="copy"><?php echo $copy["intro"]; ?></div><br>
 		
@@ -39,12 +35,12 @@ get_header();?>
 		<div class="read-more">Read more</div>
 		
 		<?php endif; ?>
-		
-		<?php $images = get_field("gallery"); if($images): ?>
-		
+	
 		<!-- Copy END -->
 		
 		<!-- Gallery -->
+		
+		<?php $images = get_sub_field("gallery"); if($images): ?>
 		
 		<div class="gallery-carousel gallery owl-carousel mt2">
 			
@@ -68,15 +64,15 @@ get_header();?>
 		
 		<div class="wrapper-buttons mt2 mb2">
 			
-			<a class="button button__dark">Book a table</a>
-			
-			<a class="button button__dark ml1">Book a room</a>
+			<a class="button button__dark">Book this room</a>
 			
 		</div>
 		
 		<!-- Actions END -->
-		
+	
 	</div>
+	
+	<?php endwhile; endif; ?>
 
 </div>
 

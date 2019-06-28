@@ -32,11 +32,11 @@ get_header();?>
 		
 		<?php endif; ?>
 		
-		<?php $images = get_field("gallery"); if($images): ?>
-		
 		<!-- Copy END -->
 		
 		<!-- Gallery -->
+		
+		<?php $images = get_field("gallery"); if($images): ?>
 		
 		<div class="gallery-carousel gallery owl-carousel mt2">
 			

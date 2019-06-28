@@ -144,6 +144,13 @@ nav {
 			font-size: 1em;
 		}
 	}
+	
+	.title {
+		text-transform: uppercase;
+		font-size: 1.2em;
+		color: $brand-primary;
+		font-weight: 600;
+	}
 }
 
 .wrapper-buttons {

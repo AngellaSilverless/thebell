@@ -95,7 +95,7 @@
     a {
         @include backgroundCover;
         flex: auto;
-        height: 15em;
+        height: 12em;
         width: 100%;
         margin: 0; /* Some gutter */
         transition: transform 0.5s ease;
