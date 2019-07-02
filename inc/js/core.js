@@ -211,6 +211,14 @@ jQuery(document).ready(function( $ ) {
 	    $(this).text($(this).text() == "Read more" ? "Read less" : "Read more");
     });
     
+    $(document).bind( "mouseup touchend", function(e){
+		var container = $('#nav');
+		if (!container.is(e.target) && container.has(e.target).length === 0) {
+			$(".menu-collapse").toggleClass("visible");
+		    $(".current-menu-item").toggleClass("loaded");
+		    $(".menu-trigger").toggleClass("opened");
+		}
+	});
 
 // ========== Add class if in viewport on page load
 
