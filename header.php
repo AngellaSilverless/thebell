@@ -34,13 +34,19 @@
 	    
 	    <div class="info-header">
 		    
-		    <?php $booking_links =  get_field("booking_links", "options"); ?>
+		    <?php
+			    
+			$booking_links =  get_field("booking_links", "options"); 
+			
+			$telephone = get_field("contact_info", "options")["telephone"];
+			
+		    ?>
 		    
 		    <a class="button" href="<?php echo $booking_links["book_room_link"]; ?>">Book a room</a>
 			
 			<a class="button" href="<?php echo $booking_links["book_table_link"]; ?>">Book a table</a>
 	    
-	    	<div class="telephone"><?php echo get_field("contact_info", "options")["telephone"]; ?></div>
+	    	<div class="telephone"><a href="tel:<?php echo $telephone; ?>"><?php echo $telephone; ?></a></div>
 	    	
 	    </div>
 	    
