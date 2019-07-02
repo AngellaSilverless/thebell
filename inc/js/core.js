@@ -51,7 +51,7 @@ jQuery(document).ready(function( $ ) {
 				flyTo: false
 			});
 			
-			map.addControl(geocoder, 'bottom-left');
+			map.addControl(geocoder, 'top-left');
 			
 			var geojson = {
 				type: 'FeatureCollection',
@@ -76,7 +76,7 @@ jQuery(document).ready(function( $ ) {
 					.addTo(map);
 				
 				el.addEventListener('click', function(e){
-					position = marker.geometry.coordinates[1] - 0.0300;
+					position = marker.geometry.coordinates[1] - 0.0200;
 					map.flyTo({
 					    center: [marker.geometry.coordinates[0], position],
 					    zoom: 11
