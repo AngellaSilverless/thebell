@@ -26,13 +26,13 @@ jQuery(document).ready(function( $ ) {
 
     $(document).ready(function() {
 			
-		if($("#brewery-map-contact").length > 0 && JSON.parse($("#brewery-map-contact").attr("points"))) {
-		    var points = JSON.parse($("#brewery-map-contact").attr("points"));
+		if($("#bell-map-contact").length > 0 && JSON.parse($("#bell-map-contact").attr("points"))) {
+		    var points = JSON.parse($("#bell-map-contact").attr("points"));
 		    
 	        mapboxgl.accessToken = 'pk.eyJ1Ijoic2lsdmVybGVzcyIsImEiOiJjaXNibDlmM2gwMDB2Mm9tazV5YWRmZTVoIn0.ilTX0t72N3P3XbzGFhUKcg';
 	        
 			var map = new mapboxgl.Map({
-			    container:  'brewery-map-contact',
+			    container:  'bell-map-contact',
 			    style:      'mapbox://styles/silverless/cjvnw465y0bl91cmionu5nqmo',
 			    center:     points.geometry.coordinates,
 			    zoom:       11,

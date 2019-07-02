@@ -21,5 +21,5 @@
 ?>
 
 <div class="map-wrapper">
-	<div id='brewery-map-contact' points='<?php echo json_encode($points);?>'></div>
+	<div id='bell-map-contact' points='<?php echo json_encode($points);?>'></div>
 </div>
