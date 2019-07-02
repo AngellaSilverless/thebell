@@ -34,9 +34,11 @@
 	    
 	    <div class="info-header">
 		    
-		    <a class="button">Book a room</a>
+		    <?php $booking_links =  get_field("booking_links", "options"); ?>
+		    
+		    <a class="button" href="<?php echo $booking_links["book_room_link"]; ?>">Book a room</a>
 			
-			<a class="button">Book a table</a>
+			<a class="button" href="<?php echo $booking_links["book_table_link"]; ?>">Book a table</a>
 	    
 	    	<div class="telephone"><?php echo get_field("contact_info", "options")["telephone"]; ?></div>
 	    	
@@ -48,9 +50,21 @@
 		    
 		    <div class="menu-trigger">
 			    
-			    <i class="fas fa-bars"></i>
+			    <div class="open">
 			    
-			    <span class="heading title">Menu</span>
+				    <i class="fas fa-bars"></i>
+				    
+				    <div class="heading title">Menu</div>
+				
+			    </div>
+			    
+			    <div class="close">
+			    
+				    <i class="fas fa-times"></i>
+				    
+				    <div class="heading title">Close</div>
+				
+			    </div>
 			    
 		    </div>             
 

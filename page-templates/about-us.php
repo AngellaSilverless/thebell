@@ -59,10 +59,12 @@ get_header();?>
 		<!-- Actions -->
 		
 		<div class="wrapper-buttons mt2 mb2">
+		    
+		    <?php $booking_links =  get_field("booking_links", "options"); ?>
 			
-			<a class="button button__dark">Book a table</a>
+			<a class="button button__dark" href="<?php echo $booking_links["book_table_link"]; ?>">Book a table</a>
 			
-			<a class="button button__dark ml1">Book a room</a>
+			<a class="button button__dark ml1" href="<?php echo $booking_links["book_room_link"]; ?>">Book a room</a>
 			
 		</div>
 		

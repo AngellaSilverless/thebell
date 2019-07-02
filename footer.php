@@ -17,7 +17,7 @@
 		    
 	    </div>
 	    
-	    <div class="container cols-3">
+	    <div class="container footer-columns">
 		    
 		    <div class="col">
 			    
@@ -99,13 +99,23 @@
 			    
 		    </div>
 		    
+		    <div class="col prizes">
+			    
+			    <?php $award = get_field("award_footer", "options"); if($award): ?>
+			    
+			    <img src="<?php echo $award["url"]; ?>">
+			    
+			    <?php endif; ?>
+			    
+		    </div>
+		    
 	    </div>
 
     </div>
     
     <div class="socket">
 	    
-	    <div class="container cols-6">
+	    <div class="container cols-6 cols-sm-12">
                 
 	        <div class="col text-left">&copy; The Bell at Ramsbury <?php echo date ('Y');?></div>
 	        

@@ -134,7 +134,7 @@ a.next-section {
 
 .map-wrapper {
 	padding: 0;
-	border-bottom: 10px solid white;
+	overflow: hidden;
 	width: 100%;
 	height: 100%;
 	
@@ -158,7 +158,6 @@ a.next-section {
 	}
 }
 
-#map-contact,
 #brewery-map-contact {
 	width: 100%;
 	height: 100%;
@@ -172,6 +171,10 @@ a.next-section {
 		cursor: pointer;
 	}
 	
+	.mapboxgl-canvas {
+		outline: none;
+	}
+	
 	.mapboxgl-ctrl-bottom-left {
         bottom: 0em;
         left: 2em;
@@ -179,17 +182,43 @@ a.next-section {
 	}
 	
 	.mapboxgl-popup {
-		max-width: 200px;
+		max-width: 250px;
+		margin-top: -8em;
 	}
 	
 	.mapboxgl-popup-content {
 		text-align: left;
-		color: black;
+		color: $brand-primary;
 		padding: 1.1em;
+		position: relative;
+		background: $brand-light-grey;
+		color: $brand-primary;
+		border-radius: 0;
+		box-shadow: -1px -1px 2px rgba(0, 0, 0, 0.1), 1px -1px 2px rgba(0, 0, 0, 0.1), -1px 1px 2px rgba(0, 0, 0, 0.1), 1px 1px 2px rgba(0, 0, 0, 0.1);
 		
 		.mapboxgl-popup-close-button {
-			display: block;
-			border-color: #000000;
+			font-size: 1.5em;
+			outline: none;
+			position: absolute;
+			top: -0.3em;
+			right: -0.3em;
+			background: $brand-primary;
+			color: white;
+			border-radius: 100%;
+			border: 3px solid $brand-light-grey;
+			cursor: pointer;
+			
+			&:before {
+				position: absolute;
+				top: -3px;
+				right: -3px;
+				width: calc(100% + 6px);
+				height: calc(100% + 6px);
+				content: "";
+				border-radius: 100%;
+				z-index: -1;
+				box-shadow: -1px -1px 2px rgba(0, 0, 0, 0.1), 1px -1px 2px rgba(0, 0, 0, 0.1), -1px 1px 2px rgba(0, 0, 0, 0.1), 1px 1px 2px rgba(0, 0, 0, 0.1);
+			}
 		}
 		
 		.buttons-popup {
@@ -200,7 +229,7 @@ a.next-section {
 				line-height: 1.4em;
 				display: inline-block;
 		        width: 100%;
-		        background-color: black;
+		        background-color: $brand-primary;
 		        border: 1px solid white;
 		        color: white;
 		        font-size: 14px;
@@ -214,268 +243,45 @@ a.next-section {
 		}
 		
 		div {
+			color: $brand-primary;
+			
+			&.title {
+				font-size: 1.5em;
+				display: inline-block;
+				text-align: center;
+				padding: 0 0 0.3em 0;
+				border-bottom: 1px solid $brand-primary;
+				font-family: $supporting-font;
+				
+				span {
+					font-size: 0.5em;
+					transform: translateY(-0.6em);
+					border-bottom: 1px solid $brand-primary;
+					display: inline-block;
+				}
+			}
+			
 			&.name {
-				text-transform: uppercase;
 			    font-size: 1.5em;
-			    letter-spacing: 0.15em;
 			    line-height: 1em;
 			    margin-bottom: 1em;
 
 			}
 			
+			&.phone, &.address, &.email {
+				font-size: 1.2em;
+				font-weight: 400;
+				margin-left: 1em;
+				margin-top: 1em;
+			}
+			
 			&.address {
-				font-size: 1.2em;
-				color: #717171;
+				font-weight: 100;
 			}
 			
-			&.phone {
-				font-size: 1.2em;
-			    margin: 0.5em 0em;
-			}
-		}
-	}
-}
-
-.mapboxgl-ctrl-bottom-right {
-    right: 2em;
-    bottom: 1em;
-}
-
-#tour-datepicker {
-	
-	display: none;
-	
-	.ui-datepicker-header {
-		width: 100%;
-		height: 3em;
-		line-height: 3em;
-		margin-bottom: 1em;
-	}
-	
-	.ui-datepicker-prev, .ui-datepicker-next {
-        height: 3em;
-        background: white;
-        border-radius: 0;
-        width: 4em;
-        line-height: 3em;
-		cursor: pointer;
-		overflow: hidden;
-		transition: border-color 0.3s ease;
-		position: relative;
-		text-align: center;
-		
-		&:before {
-		    content: '\f054';
-		    margin-left: 3px;
-		    font-family: "Font Awesome 5 Free";
-		    font-style: normal;
-		    font-weight: 900;
-		    line-height: 30px;
-		    transition: color 0.3s ease;
-		}
-		
-		&:hover, &:hover:before {
-			border-color: $brand-light-grey;
-			color: $brand-light-grey;
-		}
-		
-		span {
-			display: none;
-		}
-			
-	}
-	
-	.ui-datepicker-prev {
-		float: left;
-		transform: rotate(180deg);
-	}
-	
-	.ui-datepicker-next {
-		float: right;
-		margin-left: 12px;
-	}
-	
-	.ui-datepicker-title {
-		text-align: center;
-		font-size: 1.5em;
-		letter-spacing: 4px;
-		text-indent: 4px;
-		font-family: $brand-font;
-	}
-	
-	.ui-datepicker-calendar {
-		width: 100%;
-		text-align: center;
-		margin: 0;
-		
-			thead tr th span {
-				margin-bottom: 10px;
-				display: block;
-				text-transform: uppercase;
-				font-weight: normal;
-			}
-	}
-	
-	.ui-state-default {
-		margin: 0;
-		height: 50px;
-		background-color: white;
-		display: block;
-		text-decoration: none;
-		color: white;
-		border: 2px solid transparent;
-		line-height: 50px;
-		font-size: 20px;
-		letter-spacing: 4px;
-		text-indent: 4px;
-		background: #848484;
-		transition: background-color 0.3s ease;
-		cursor: pointer;
-		
-		&:hover {
-			background-color: rgba(93, 93, 93, 1);
-		}
-	}
-	
-	.ui-state-active {
-		background-color: $brand-primary;
-		
-		&:hover {
-			background-color: $brand-primary;
-		}
-	}
-	
-	.ui-datepicker-unselectable .ui-state-default {
-		color: grey;
-		cursor: default;
-        background-color: white;
-		border: 2px solid transparent;
-	}
-}
-
-.modal {
-    position: absolute;
-    z-index: 10000;
-    top: 0;
-    left: 0;
-    visibility: hidden;
-    width: 100%;
-    height: 100%;
-    display: block;
-    
-    &.is-visible {
-	    visibility: visible;
-	    
-	    .modal-overlay {
-			opacity: 1;
-			visibility: visible;
-			transition-delay: 0s;
-		}
-		
-		.modal-transition {
-			transform: translateY(0) translateX(50%);
-			opacity: 1;
-		}
-	}
-	
-	.modal-overlay {
-		position: fixed;
-		z-index: 10;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background: hsla(0, 0%, 0%, 0.6);
-		visibility: hidden;
-		opacity: 0;
-		transition: visibility 0s linear 0.3s, opacity 0.3s;
-	}
-	
-	.modal-wrapper {
-		border-radius: 0.3rem;
-		position: absolute;
-		z-index: 9999;
-		right: 50%;
-		width: 90vw;
-		margin-left: -16em;
-
-		.modal-header {
-            position: absolute;
-            top: 2em;
-            right: 2em;
-            z-index: 999999;
-			
-			.modal-close {
-				position: absolute;
-				top: 0;
-				right: 0;
-				padding: 1em;
-				color: white;
-				background: none;
-				border: 0;
-				outline: none;
-				cursor: pointer;
-  
-				i {
-					font-size: 1.3em;
-				}
-  
-				&:focus {
-					outline: none;
-				}
-				
-				&:hover {
-					color: $brand-light-grey;
-				}
-			}
-			
-			.modal-heading {
-				font-size: 1.125em;
-				margin: 0;
-				font-family: $body-font;
-				font-weight: 200;
-				text-transform: uppercase;
-			}
-
-		}
-		
-		.modal-content {
-			padding: 1em;
-		
-			video {
-				position: relative;
-				width: 100%;
-				height: 75vh;
-				&:focus {
-    				outline:none;
-				}
-			}
-			
-			& > *:first-child {
+			&.email {
 				margin-top: 0;
 			}
-			
-			& > *:last-child {
-				margin-bottom: 0;
-			}
 		}
 	}
-	
-	.modal-transition {
-		transition: all 0.3s 0.12s;
-		transform: translateY(-10%) translateX(50%);
-		opacity: 0;
-	}
-}
-
-
-.wpcf7-not-valid-tip {
-	color: lighten($brand-primary, 10%) !important;
-	margin-top: -1em;
-	text-shadow: 1px 1px 1px #565656;
-}
-
-.wpcf7-response-output {
-	border: 2px solid $brand-primary !important;
-	background-color: $brand-dark-grey !important;
 }

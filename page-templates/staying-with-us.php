@@ -64,7 +64,7 @@ get_header();?>
 		
 		<div class="wrapper-buttons mt2 mb2">
 			
-			<a class="button button__dark">Book this room</a>
+			<a class="button button__dark" href="<?php echo get_field("booking_links", "options")["book_room_link"]; ?>">Book this room</a>
 			
 		</div>
 		

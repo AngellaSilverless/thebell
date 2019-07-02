@@ -22,7 +22,7 @@ $background = get_field("posts_field", $page_news)["background_image"]; if($back
 	
 	<h1 class="heading heading__lg heading__light slow-fade mt2 page-title"><?php the_title(); ?></h1>
 	
-	<div class="wrapper-content">
+	<div class="wrapper-content single-new">
 		
 		<?php $image = wp_get_attachment_image_url(get_post_thumbnail_id($post->ID), "medium_large"); ?>
 		
@@ -66,7 +66,7 @@ $background = get_field("posts_field", $page_news)["background_image"]; if($back
 			
 		<?php endif; ?>
 	
-		<div class="wrapper-buttons align-right">
+		<div class="wrapper-buttons <?php if(!$images) echo "align-right"; ?>">
 			
 			<a href="/whats-on" class="button button__dark mt2">Back to What's on</a>
 			

@@ -8,7 +8,7 @@
 		
 		<div class="post-date"><?php the_time( 'l, jS F Y' ); ?></div>
 		
-		<h2 class="post-title heading heading__md"><?php the_title(); ?></h2>
+		<h2 class="post-title heading heading__md slide-up"><?php the_title(); ?></h2>
 		
 		<div class="post-description mb2"><?php echo substr(wp_strip_all_tags(get_the_content()), 0, 300) . "..."; ?></div>
 		
