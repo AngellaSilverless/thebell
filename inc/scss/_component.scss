@@ -173,6 +173,10 @@ a.next-section {
 		cursor: pointer;
 	}
 	
+	.mapboxgl-ctrl-geocoder--button {
+		outline: none;
+	}
+	
 	.mapboxgl-canvas {
 		outline: none;
 	}
