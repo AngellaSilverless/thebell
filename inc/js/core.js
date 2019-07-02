@@ -150,12 +150,14 @@ jQuery(document).ready(function( $ ) {
 
 // ========== Controller for lightbox elements
 
-    $('.lightbox-gallery').magnificPopup({
-        type: 'image',
-        gallery:{
-            enabled:true
-        }
-    });
+	$(".gallery").each(function() {
+		$(this).find(".lightbox-gallery").magnificPopup({
+	        type: 'image',
+	        gallery:{
+	            enabled:true
+	        }
+	    });
+	});
     
     $('.single-image').magnificPopup({
 		type: 'image',
