@@ -164,13 +164,28 @@ jQuery(document).ready(function( $ ) {
 		closeOnContentClick: true,
 		closeBtnInside: false,
 		fixedContentPos: true,
-		mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
+		mainClass: 'mfp-no-margins mfp-with-zoom',
 		image: {
 			verticalFit: true
 		},
 		zoom: {
 			enabled: true,
-			duration: 300 // don't foget to change the duration also in CSS
+			duration: 300
+		}
+	});
+	
+	$('.post-image a').magnificPopup({
+		type: 'image',
+		closeOnContentClick: true,
+		closeBtnInside: false,
+		fixedContentPos: true,
+		mainClass: 'mfp-no-margins mfp-with-zoom',
+		image: {
+			verticalFit: true
+		},
+		zoom: {
+			enabled: true,
+			duration: 300
 		}
 	});
  
@@ -214,9 +229,9 @@ jQuery(document).ready(function( $ ) {
     $(document).bind( "mouseup touchend", function(e){
 		var container = $('#nav');
 		if (!container.is(e.target) && container.has(e.target).length === 0) {
-			$(".menu-collapse").toggleClass("visible");
-		    $(".current-menu-item").toggleClass("loaded");
-		    $(".menu-trigger").toggleClass("opened");
+			$(".menu-collapse").removeClass("visible");
+		    $(".current-menu-item").removeClass("loaded");
+		    $(".menu-trigger").removeClass("opened");
 		}
 	});
 
