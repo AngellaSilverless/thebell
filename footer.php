@@ -8,6 +8,15 @@
 </main>
 
 <footer class="footer">
+
+<div class="newsletter">
+    <div class="container">
+        <div class="col">
+    <?php echo do_shortcode('[contact-form-7 id="2275" title="Newsletter"]');?>
+        </div>
+    </div>
+</div>
+
 	
     <div class="pre-socket">
 	    

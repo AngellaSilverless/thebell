@@ -152,6 +152,10 @@ nav {
 		padding-top: 0.5em;
 		font-weight: 100;
 	}
+	
+	img {
+    	width:400px;
+	}
 }
 
 /*===========BODY==========*/
@@ -298,6 +302,10 @@ nav {
 
 .content-page.home .logo {
 	margin-top: 25vh;
+	
+	img {
+    	width:600px;
+	}
 }
 
 .content-page.standard .logo {
@@ -435,6 +443,33 @@ nav {
 }
 
 /*===========FOOTER==========*/
+
+.newsletter {
+    background: hsl(0, 0%, 46%);
+    color: white;
+    text-align: center;
+    
+    p {
+        font-size: 1.4em;
+    }
+    
+    input {
+        border:none;
+        -webkit-appearance:none;
+        font-size: 0.8em;
+        padding:0.5em 1em;
+        margin-left: 1em;
+        
+        &.wpcf7-submit {
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            background: hsl(0, 0%, 20%);
+            color: hsl(0, 0%, 100%);
+            padding: 0.75em 3em;
+            font-weight: 100;
+        }
+    }
+}
 
 .footer-columns	 {
 	grid-gap: 1em;
