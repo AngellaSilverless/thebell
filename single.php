@@ -66,9 +66,9 @@ $background = get_field("posts_field", $page_news)["background_image"]; if($back
 			
 		<?php endif; ?>
 	
-		<div class="wrapper-buttons <?php if(!$images) echo "align-right"; ?>">
+		<div class="wrapper-buttons mt2 <?php if(!$images) echo "align-right"; ?>">
 			
-			<a href="/whats-on" class="button button__dark mt2">Back to What's on</a>
+			<a href="/whats-on" class="button button__dark">Back to What's on</a>
 			
 		</div>
 		

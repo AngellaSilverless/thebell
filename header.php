@@ -64,7 +64,7 @@
 			    
 				    <i class="fas fa-bars"></i>
 				    
-				    <div class="heading title">Menu</div>
+				    <div class="heading title"><!--Menu--></div>
 				
 			    </div>
 			    

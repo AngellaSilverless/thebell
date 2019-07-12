@@ -82,7 +82,7 @@ get_header();?>
 			
 			<a class="button button__dark" href="<?php echo $booking_links["book_table_link"]; ?>">Book a table</a>
 			
-			<a class="button button__dark ml1" href="<?php echo $booking_links["book_room_link"]; ?>">Book a room</a>
+			<!--<a class="button button__dark ml1" href="<?php echo $booking_links["book_room_link"]; ?>">Book a room</a>-->
 			
 		</div>
 		

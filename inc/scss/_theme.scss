@@ -105,7 +105,7 @@ nav {
 			margin-left: 0;
 			
 			.menu-item {
-				font-size: 2em;
+				font-size: 1.5em;
 				margin-bottom: 1.5em;
 				font-family: $brand-font;
 				
@@ -136,7 +136,8 @@ nav {
 		display: inline-block;
 		padding: 0.3em 0.5em;
 		border-bottom: 1px solid white;
-		
+        letter-spacing: 0.07em;
+        
 		span {
 			font-size: 0.5em;
 			transform: translateY(-0.6em);
@@ -156,7 +157,7 @@ nav {
 /*===========BODY==========*/
 
 .wrapper-content {
-	background: hsla(0, 0%, 100%, 0.9);
+	background: hsla(0, 0%, 100%, 0.8);
 	padding: 3rem 6rem;
 	font-size: 1.2em;
 	font-family: $supporting-font;
@@ -301,6 +302,10 @@ nav {
 
 .content-page.standard .logo {
 	margin-top: 10vh;
+	
+	.title {
+    	font-size: 3em;
+	}
 }
 
 #contact-form {

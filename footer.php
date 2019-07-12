@@ -23,6 +23,8 @@
 			    
 			    <?php if(have_rows("contact_info", "options")): while(have_rows("contact_info", "options")): the_row(); ?>
 			    
+			    <div class="mb1"><?php the_sub_field("address");?></div>
+			    
 			    <div class="mb1"><?php the_sub_field("telephone");?></div>
 			    
 			    <div class="mb1"><?php the_sub_field("email");?></div>
