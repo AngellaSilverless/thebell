@@ -1,3 +1,5 @@
 <div class="logo slide-down">
-<img src="<?php the_field('logo', 'options');?>"/>
+<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+    <img src="<?php the_field('logo', 'options');?>"/>
+</a>
 </div>
