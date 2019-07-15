@@ -471,6 +471,20 @@ nav {
     }
 }
 
+div.wpcf7-validation-errors, 
+div.wpcf7-acceptance-missing {
+  border: none;
+  background: hsl(0, 100%, 50%);
+  padding: 1em;
+}
+
+span.wpcf7-not-valid-tip {
+  color: hsl(0, 0%, 20%);
+  font-size: 0.75em;
+  font-weight: normal;
+  display: inline-block;
+}
+
 .footer-columns	 {
 	grid-gap: 1em;
 	grid-template-columns: repeat(5, calc(20% - 0.8em));
