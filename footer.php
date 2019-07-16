@@ -92,7 +92,7 @@
 			    
 			    <div class="links">
 			    
-				    <div class="title mb1">Web Links</div>
+				    <div class="title mb1">Links</div>
 				    
 				    <?php if(have_rows("web_links", "options")): while(have_rows("web_links", "options")): the_row(); ?>
 				    
@@ -117,6 +117,13 @@
 			    <img src="<?php echo $award["url"]; ?>">
 			    
 			    <?php endif; ?>
+
+			    <?php $award2 = get_field("award_footer_2", "options"); if($award2): ?>
+			    
+			    <img src="<?php echo $award2["url"]; ?>">
+			    
+			    <?php endif; ?>
+
 			    
 		    </div>
 		    
