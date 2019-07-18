@@ -40,7 +40,7 @@ $background = get_field("posts_field", $page_news)["background_image"]; if($back
 			
 			<div class="col">
 				
-				<div class="single-date"><?php the_time( 'l, jS F Y' ); ?></div>
+				<!--<div class="single-date"><?php the_time( 'l, jS F Y' ); ?></div>-->
 				
 				<div class="copy"><?php the_content(); ?></div>
 			
