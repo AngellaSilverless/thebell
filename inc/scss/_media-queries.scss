@@ -138,6 +138,29 @@ body {
   
 /*---FOOTER---*/
 
+.newsletter {
+    overflow:hidden;
+
+    .wpcf7-form-control-wrap {
+        display: block;
+        margin:0.5em 0;
+    }
+    
+    input {
+        margin: 0 auto;
+        display: block;
+        width: 80%;
+    }
+}
+
+.newsletter .container {
+    grid-template-columns: repeat(4, 1fr);
+    
+    >.col {
+        grid-column: span 4;
+    }
+}
+
 }/*---end small mq---*/
 
 
