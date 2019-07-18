@@ -10,7 +10,7 @@
 	
 	<div class="col content">
 		
-		<div class="post-date"><?php the_time( 'l, jS F Y' ); ?></div>
+		<!--<div class="post-date"><?php the_time( 'l, jS F Y' ); ?></div>-->
 		
 		<h2 class="post-title heading heading__md slide-up">
 			
