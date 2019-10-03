@@ -2,7 +2,7 @@
 /**
  * ============== Template Name: Eating & Drinking
  *
- * @package thebell
+ * @package poulton
  */
 get_header();?>
 

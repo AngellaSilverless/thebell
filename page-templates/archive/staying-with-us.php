@@ -1,8 +1,8 @@
 <?php
 /**
- * ============== Template Name: About Us
+ * ============== Template Name: Staying With Us
  *
- * @package thebell
+ * @package poulton
  */
 get_header();?>
 
@@ -14,11 +14,15 @@ get_header();?>
 	
 	<h1 class="heading heading__lg heading__light slow-fade mt2 page-title"><?php the_field("hero_heading"); ?></h1>
 	
-	<div class="wrapper-content">
+	<?php if(have_rows("rooms")): while(have_rows("rooms")): the_row(); ?>
+	
+	<div class="wrapper-content mb4">
 		
+		<div class="title"><?php the_sub_field("title"); ?></div>
+	
 		<!-- Copy -->
 		
-		<?php $copy = get_field("copy"); if($copy["intro"]): ?>
+		<?php $copy = get_sub_field("copy"); if($copy["intro"]): ?>
 		
 		<div class="copy"><?php echo $copy["intro"]; ?></div><br>
 		
@@ -31,12 +35,12 @@ get_header();?>
 		<div class="read-more">Read more</div>
 		
 		<?php endif; ?>
-		
+	
 		<!-- Copy END -->
 		
 		<!-- Gallery -->
 		
-		<?php $images = get_field("gallery"); if($images): ?>
+		<?php $images = get_sub_field("gallery"); if($images): ?>
 		
 		<div class="gallery-carousel gallery owl-carousel mt2">
 			
@@ -59,18 +63,16 @@ get_header();?>
 		<!-- Actions -->
 		
 		<div class="wrapper-buttons mt2 mb2">
-		    
-		    <?php $booking_links =  get_field("booking_links", "options"); ?>
 			
-			<a class="button button__dark" href="<?php echo $booking_links["book_table_link"]; ?>">Book a table</a>
-			
-			<a class="button button__dark ml1" href="<?php echo $booking_links["book_room_link"]; ?>">Book a room</a>
+			<a class="button button__dark" href="<?php echo get_field("booking_links", "options")["book_room_link"]; ?>">Book a room</a>
 			
 		</div>
 		
 		<!-- Actions END -->
-		
+	
 	</div>
+	
+	<?php endwhile; endif; ?>
 
 </div>
 
