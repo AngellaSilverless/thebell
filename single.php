@@ -2,7 +2,7 @@
 /**
  * The template for displaying all single posts
  *
- * @package thebell
+ * @package poulton
  */
 get_header();
 

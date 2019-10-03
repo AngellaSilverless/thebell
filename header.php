@@ -2,7 +2,7 @@
 /**
  * Header
  *
- * @package thebell
+ * @package poulton
  */
 
 ?>
@@ -16,7 +16,7 @@
 <meta name="keywords" content=" ">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>The Bell at Ramsbury</title>
+<title>Connect & Seal | Poulton Technologies</title>
 
 <link rel="stylesheet" href="https://use.typekit.net/dmz2ckm.css"><!--TYPEKIT INJECT-->
 
@@ -36,47 +36,9 @@
 
     <div id="page" class="site-wrapper">
 	    
-	    <div class="info-header">
-		    
-		    <?php
-			    
-			$booking_links =  get_field("booking_links", "options"); 
-			
-			$telephone = get_field("contact_info", "options")["telephone"];
-			
-		    ?>
-		    
-		    <a class="button" href="<?php echo $booking_links["book_room_link"]; ?>">Book a room</a>
-			
-			<a class="button" href="<?php echo $booking_links["book_table_link"]; ?>">Book a table</a>
-	    
-	    	<div class="telephone"><a href="tel:<?php echo $telephone; ?>"><?php echo $telephone; ?></a></div>
-	    	
-	    </div>
-	    
 	    <main><!--closes in footer.php-->
 	    
 	    <nav id="nav">
-		    
-		    <div class="menu-trigger">
-			    
-			    <div class="open">
-			    
-				    <i class="fas fa-bars"></i>
-				    
-				    <div class="heading title"><!--Menu--></div>
-				
-			    </div>
-			    
-			    <div class="close">
-			    
-				    <i class="fas fa-times"></i>
-				    
-				    <div class="heading title">Close</div>
-				
-			    </div>
-			    
-		    </div>             
 
 			<div class="menu-collapse">
 			

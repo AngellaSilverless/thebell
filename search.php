@@ -2,7 +2,7 @@
 /**
  * The template for displaying search results pages
  *
- * @package thebell
+ * @package poulton
  */
 
 get_header();
