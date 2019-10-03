@@ -2,7 +2,7 @@
 /**
  * ============== Template Name: Terms and Privacy
  *
- * @package poulton
+ * @package thebell
  */
 get_header();?>
 

@@ -2,7 +2,7 @@
 /**
  * ============== Template Name: Home Page
  *
- * @package poulton
+ * @package thebell
  */
 get_header();?>
 

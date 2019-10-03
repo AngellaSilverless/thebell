@@ -2,7 +2,7 @@
 /**
  * ============== Template Name: Contact Us
  *
- * @package poulton
+ * @package thebell
  */
 get_header();?>
 

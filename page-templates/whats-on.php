@@ -2,7 +2,7 @@
 /**
  * ============== Template Name: What's On
  *
- * @package poulton
+ * @package thebell
  */
 get_header();?>
 
