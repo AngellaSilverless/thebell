@@ -2,7 +2,7 @@
 /**
  * The template for displaying 404 pages
  *
- * @package poulton
+ * @package thebell
  */
 
 get_header();

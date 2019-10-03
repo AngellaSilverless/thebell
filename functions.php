@@ -1,8 +1,8 @@
 <?php
 /**
- * poulton functions and definitions
+ * thebell functions and definitions
  *
- * @package poulton
+ * @package thebell
  */
 /** == Ditch Junk == */ 
 
@@ -12,11 +12,11 @@ remove_action('wp_print_styles', 'print_emoji_styles');
 
 /** = Enqueue scripts and styles = */ 
 
-function poulton_scripts() {
+function thebell_scripts() {
 	
-	wp_enqueue_style( 'poulton-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'thebell-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'poulton-core-js', get_template_directory_uri() . '/inc/js/compiled.js', array('jquery'), true); 
+	wp_enqueue_script( 'thebell-core-js', get_template_directory_uri() . '/inc/js/compiled.js', array('jquery'), true); 
 	
 	wp_enqueue_script( 'mapbox-gl', get_template_directory_uri() . '/inc/js/mapbox-gl.js', array(), true );
 	
@@ -24,7 +24,7 @@ function poulton_scripts() {
 	
 }
 
-add_action( 'wp_enqueue_scripts', 'poulton_scripts' );
+add_action( 'wp_enqueue_scripts', 'thebell_scripts' );
 
 /**= Add Menus =**/
 

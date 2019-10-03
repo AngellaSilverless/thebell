@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * @package poulton
+ * @package thebell
  */
 get_header();?>
 
