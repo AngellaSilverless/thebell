@@ -4,9 +4,9 @@
 
 @media only screen and (max-width: 1200px) {
 
-/*---GLOBALS---*/ 
+/*---GLOBALS---*/
 
-/*---HEADER---*/ 
+/*---HEADER---*/
 
 /*---CONTENT---*/
 
@@ -19,7 +19,7 @@
 	padding-bottom: 2em;
 	margin-bottom: 2em;
 	border-bottom: 1px solid $brand-mid-grey;
-	
+
 	.post-image {
 		height: 15em;
 		margin-bottom: 1em;
@@ -28,16 +28,16 @@
 
 .contact-flex {
 	display: block;
-	
+
 	.contact-info {
 		margin-bottom: 2em;
 	}
-	
+
 	.contact-actions {
 		display: flex;
 		justify-content: center;
 		margin-top: 2em;
-		
+
 		.contact-links:last-of-type {
 			margin-left: 1em;
 		}
@@ -57,13 +57,13 @@
 /*===========MEDIUM (992px)==========*/
 
 @media only screen and (max-width: 992px) {
-  
-/*---GLOBALS---*/ 
+
+/*---GLOBALS---*/
 
 body {
     font-size: 0.75em;
 }
- 
+
 /*---HEADER---*/
 
 /*---CONTENT---*/
@@ -80,16 +80,16 @@ body {
 .footer .pre-socket .container {
 	display: block;
 	text-align: center;
-	
+
 	.col {
 		margin-top: 2em;
 	}
-	
+
 	.prizes img {
 		width: 15em;
 	}
 }
-  
+
 }/*---end medium mq---*/
 
 
@@ -125,17 +125,17 @@ body {
 
 .contact-flex .contact-actions {
 	display: block;
-	
+
 	.contact-links:last-of-type {
 		margin-left: 0em;
 	}
-	
+
 	.contact-links div {
 		margin-left: auto;
 		margin-right: auto;
 	}
 }
-  
+
 /*---FOOTER---*/
 
 .newsletter {
@@ -145,7 +145,7 @@ body {
         display: block;
         margin:0.5em 0;
     }
-    
+
     input {
         margin: 0 auto;
         display: block;
@@ -155,7 +155,7 @@ body {
 
 .newsletter .container {
     grid-template-columns: repeat(4, 1fr);
-    
+
     >.col {
         grid-column: span 4;
     }
@@ -167,7 +167,7 @@ body {
 /*===========EXTRA SMALL (576px)==========*/
 
 @media only screen and (max-width: 576px) {
-  
+
 /*---GLOBALS---*/
 
 /*---HEADER---*/
@@ -177,7 +177,7 @@ body {
 }
 
 .info-header {
-	
+
 	.button {
 		display: none;
 		margin-bottom: 1em;
@@ -200,7 +200,7 @@ body {
 	padding: 2em;
 	display: flex;
 	flex-direction: column;
-	
+
 	.gallery {
 		order: -1;
 		margin-bottom: 1em;
@@ -230,7 +230,7 @@ body {
 	width: 70%;
 	text-align: center;
 	margin: 0 auto;
-	
+
 	&:not(:last-of-type) {
 		margin-bottom: 2em;
 	}
@@ -240,14 +240,23 @@ body {
 
 .socket .container {
 	display: block;
-	
+
 	.col {
 		text-align: center;
-		
+
 		&:last-of-type {
 			margin-top: 1em;
 		}
 	}
+}
+
+.pop-up {
+	top:-500%;
+	left: 2%;
+    width: 96%;
+		&.active {
+    top: 1rem;
+		}
 }
 
 }/*---end extra small mq---*/
@@ -255,7 +264,7 @@ body {
 /*===========SUPER SMALL (320px)==========*/
 
 @media only screen and (max-width: 320px) {
-	
+
 	.wrapper-buttons a {
 		width: 100%;
 	}
@@ -267,7 +276,7 @@ body {
 /*===========MAPBOX (640px)==========*/
 
 @media screen and (max-width: 640px) {
-	
+
 .mapboxgl-ctrl-geocoder.mapboxgl-ctrl {
 	width: 240px;
 	font-size: 15px;
@@ -293,5 +302,5 @@ body {
 	height: 36px;
     padding: 6px 35px;
 }
-	
+
 }/*---end mapbox mq---*/

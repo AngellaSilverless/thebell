@@ -4,24 +4,24 @@
  *
  * @package thebell
  */
-/** == Ditch Junk == */ 
+/** == Ditch Junk == */
 
 remove_action('wp_head', 'print_emoji_detection_script', 7);
 
 remove_action('wp_print_styles', 'print_emoji_styles');
 
-/** = Enqueue scripts and styles = */ 
+/** = Enqueue scripts and styles = */
 
 function thebell_scripts() {
-	
+
 	wp_enqueue_style( 'thebell-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'thebell-core-js', get_template_directory_uri() . '/inc/js/compiled.js', array('jquery'), true); 
-	
+	wp_enqueue_script( 'thebell-core-js', get_template_directory_uri() . '/inc/js/compiled.js', array('jquery'), true);
+
 	wp_enqueue_script( 'mapbox-gl', get_template_directory_uri() . '/inc/js/mapbox-gl.js', array(), true );
-	
+
 	wp_enqueue_script( 'mapbox-gl-geocoder', get_template_directory_uri() . '/inc/js/mapbox-gl-geocoder.min.js', array(), true );
-	
+
 }
 
 add_action( 'wp_enqueue_scripts', 'thebell_scripts' );
@@ -40,10 +40,10 @@ add_action( 'init', 'sl_custom_menu' );
 /* Dashboard Config */
 
 add_action('wp_dashboard_setup', 'sl_dashboard_widget');
-  
+
 function sl_dashboard_widget() {
 	global $wp_meta_boxes;
- 
+
 	wp_add_dashboard_widget('custom_help_widget', 'Technical Support', 'custom_dashboard_help');
 }
 function custom_dashboard_help() {
@@ -117,9 +117,9 @@ function my_custom_fonts() {
 /**
  * ACF Options Pages.
  */
- 
+
  if( function_exists('acf_add_options_page') ) {
-	
+
 	acf_add_options_page(array(
 		'page_title' 	=> 'Theme Settings',
 		'menu_title'	=> 'Theme Settings',
@@ -127,14 +127,22 @@ function my_custom_fonts() {
 		'capability'	=> 'edit_posts',
 		'redirect'		=> false
 	));
+
+	acf_add_options_page(array(
+		'page_title' 	=> 'Pop Up Message',
+		'menu_title'	=> 'Pop Up Message',
+		'menu_slug' 	=> 'popup-msg',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
 }
- 
+
 /**= Remove Default Menu Items =**/
- 
+
 function remove_menus(){
 
   remove_menu_page( 'edit-comments.php' );          //Comments
-  
+
 }
 add_action( 'admin_menu', 'remove_menus' );
 
